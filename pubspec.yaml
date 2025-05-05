@@ -18,8 +18,11 @@ dependencies:
   intl: ^0.20.2
   logger: ^2.5.0
   url_launcher: ^6.3.1
-  # Icons
+  flutter_native_splash: ^2.4.6
+  smooth_page_indicator: ^1.2.1
 
+  # Icons
+  flutter_vector_icons: ^2.0.0
   cupertino_icons: ^1.0.8
 
   # State Management
@@ -41,7 +44,7 @@ flutter:
   assets:
     - assets/logos/
     - assets/icons/
-    - assets/images
+    - assets/images/on_boarding_images/
 
   ### Fonts
   fonts:

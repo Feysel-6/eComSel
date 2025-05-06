@@ -1,8 +1,10 @@
+import 'package:ecom_sel/features/authentication/screens/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../common/styles/spacing_style.dart';
-import '../../../../utlis/constants/colors.dart';
+import '../../../../common/widgets/login_signup/form_divider.dart';
+import '../../../../common/widgets/login_signup/social_button.dart';
 import '../../../../utlis/constants/image_strings.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../../../utlis/constants/text_strings.dart';
@@ -21,89 +23,14 @@ class LoginScreen extends StatelessWidget {
             children: [
               const LoginHeader(),
               const LoginForm(),
-              const FormDivider(),
+              const EFormDivider(dividerText: ETexts.orSignInWith
+              ),
               const SizedBox(height: ESizes.spaceBtwSections),
-              const SocialButtons(),
+              const ESocialButtons(),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class SocialButtons extends StatelessWidget {
-  const SocialButtons({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: EColors.grey),
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Image(
-              width: ESizes.iconMd,
-              height: ESizes.iconMd,
-              image: AssetImage(EImages.google),
-            ),
-          ),
-        ),
-        const SizedBox(width: ESizes.spaceBtwItems),
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: EColors.grey),
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Image(
-              width: ESizes.iconMd,
-              height: ESizes.iconMd,
-              image: AssetImage(EImages.facebook),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class FormDivider extends StatelessWidget {
-  const FormDivider({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final dark = EHelperFunctions.isDarkMode(context);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Flexible(
-          child: Divider(
-            color: dark ? EColors.darkGrey : EColors.grey,
-            thickness: 0.5,
-            indent: 60,
-            endIndent: 5,
-          ),
-        ),
-        Text(
-          ETexts.orSignInWith.capitalize!,
-          style: Theme.of(context).textTheme.labelMedium,
-        ),
-        Flexible(
-          child: Divider(
-            color: dark ? EColors.darkGrey : EColors.grey,
-            thickness: 0.5,
-            indent: 5,
-            endIndent: 60,
-          ),
-        ),
-      ],
     );
   }
 }
@@ -162,7 +89,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => SignupScreen()),
                 child: Text(ETexts.createAccount),
               ),
             ),

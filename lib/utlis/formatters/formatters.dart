@@ -6,7 +6,7 @@ class EFormatter {
     return DateFormat('dd-MM-yyy').format(date);
   }
 
-  static String fomatCurrency(double amount) {
+  static String formatCurrency(double amount) {
     return NumberFormat.currency(locale: 'en_US', symbol: '\$').format(amount);
   }
 

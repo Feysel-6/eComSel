@@ -9,6 +9,7 @@ import '../../../../utlis/constants/image_strings.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../../../utlis/constants/text_strings.dart';
 import '../../../../utlis/helpers/helper_functions.dart';
+import '../password_configuration/forget_password.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -71,7 +72,7 @@ class LoginForm extends StatelessWidget {
                 ),
 
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(ETexts.forgetPassword),
                 ),
               ],

@@ -1,12 +1,7 @@
-import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:ecom_sel/common/widgets/clear_button.dart';
+import 'package:ecom_sel/common/widgets/success_screen/check_your_email.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../../utlis/constants/image_strings.dart';
-import '../../../../utlis/constants/sizes.dart';
 import '../../../../utlis/constants/text_strings.dart';
-import '../login/login.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
@@ -16,49 +11,13 @@ class ResetPassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-            onPressed: () => Get.offAll(() => const LoginScreen()),
-            icon: const Icon(CupertinoIcons.clear),
-          ),
-        ],
+        actions: [ClearButton()],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(ESizes.defaultSpace),
-        child: Column(
-          children: [
-            Image(
-              image: AssetImage(EImages.deliveredEmailIllustration),
-              width: EHelperFunctions.screenWidth() * 0.6,
-            ),
-            SizedBox(height: ESizes.spaceBtwSections),
-
-            Text(
-              ETexts.changeYourPasswordTitle,
-              style: Theme.of(context).textTheme.headlineMedium,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: ESizes.spaceBtwItems),
-
-            Text(
-              ETexts.changeYourPasswordSubTitle,
-              style: Theme.of(context).textTheme.labelMedium,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: ESizes.spaceBtwItems),
-
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(onPressed: () {}, child: Text(ETexts.done)),
-            ),
-            SizedBox(height: ESizes.spaceBtwItems),
-
-            SizedBox(
-              width: double.infinity,
-              child: TextButton(onPressed: () {}, child: Text(ETexts.resendEmail)),
-            ),
-          ],
-        ),
+      body: CheckYourEmail(
+        title: ETexts.changeYourPasswordTitle,
+        subTitle: ETexts.changeYourPasswordSubTitle,
+        btnTxt: ETexts.done,
+        onPressed: () {},
       ),
     );
   }

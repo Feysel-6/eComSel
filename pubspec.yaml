@@ -22,8 +22,8 @@ dependencies:
   smooth_page_indicator: ^1.2.1
 
   # Icons
-  flutter_vector_icons: ^2.0.0
   cupertino_icons: ^1.0.8
+  hugeicons: ^0.0.11
 
   # State Management
   get: ^4.6.5

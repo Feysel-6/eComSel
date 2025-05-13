@@ -6,6 +6,7 @@ import 'package:ecom_sel/utlis/device/device_utility.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/image_strings.dart';
@@ -69,7 +70,7 @@ class OnBoardingNextButton extends StatelessWidget {
           backgroundColor: dark ? EColors.primary : EColors.black,
           side: BorderSide.none,
         ),
-        child: Icon(Icons.arrow_right_alt),
+        child: Icon(HugeIcons.strokeRoundedArrowRight01),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:ecom_sel/features/authentication/screens/signup/verify_email.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 import '../../../../../common/widgets/login_signup/form_divider.dart';
 import '../../../../../common/widgets/login_signup/social_button.dart';
@@ -25,7 +26,7 @@ class ESignupForm extends StatelessWidget {
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: ETexts.firstName,
-                    prefixIcon: Icon(Icons.supervised_user_circle_outlined),
+                    prefixIcon: Icon(HugeIcons.strokeRoundedUser),
                   ),
                 ),
               ),
@@ -34,8 +35,8 @@ class ESignupForm extends StatelessWidget {
                 child: TextFormField(
                   expands: false,
                   decoration: const InputDecoration(
-                    labelText: ETexts.firstName,
-                    prefixIcon: Icon(Icons.supervised_user_circle_outlined),
+                    labelText: ETexts.lastName,
+                    prefixIcon: Icon(HugeIcons.strokeRoundedUser),
                   ),
                 ),
               ),
@@ -46,7 +47,7 @@ class ESignupForm extends StatelessWidget {
             expands: false,
             decoration: const InputDecoration(
               labelText: ETexts.username,
-              prefixIcon: Icon(Icons.supervised_user_circle_outlined),
+              prefixIcon: Icon(HugeIcons.strokeRoundedUserEdit01),
             ),
           ),
           SizedBox(height: ESizes.spaceBtwInputFields),
@@ -54,7 +55,7 @@ class ESignupForm extends StatelessWidget {
             expands: false,
             decoration: const InputDecoration(
               labelText: ETexts.email,
-              prefixIcon: Icon(Icons.email_outlined),
+              prefixIcon: Icon(HugeIcons.strokeRoundedMail01),
             ),
           ),
           SizedBox(height: ESizes.spaceBtwInputFields),
@@ -62,7 +63,7 @@ class ESignupForm extends StatelessWidget {
             expands: false,
             decoration: const InputDecoration(
               labelText: ETexts.phoneNo,
-              prefixIcon: Icon(Icons.call),
+              prefixIcon: Icon(HugeIcons.strokeRoundedCall),
             ),
           ),
           SizedBox(height: ESizes.spaceBtwInputFields),
@@ -70,8 +71,8 @@ class ESignupForm extends StatelessWidget {
             expands: false,
             decoration: const InputDecoration(
               labelText: ETexts.password,
-              prefixIcon: Icon(Icons.password_outlined),
-              suffixIcon: Icon(Icons.remove_red_eye),
+              prefixIcon: Icon(HugeIcons.strokeRoundedPasswordValidation),
+              suffixIcon: Icon(HugeIcons.strokeRoundedViewOffSlash),
             ),
           ),
           SizedBox(height: ESizes.spaceBtwInputFields),

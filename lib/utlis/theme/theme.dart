@@ -30,7 +30,7 @@ class EAppTheme{
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
     primaryColor: Colors.blue,
     textTheme: ETextTheme.darkTextTheme,
     chipTheme: EChipTheme.darkChipTheme,
@@ -40,6 +40,6 @@ class EAppTheme{
     bottomSheetTheme: EBottomSheetTheme.darkBottomSheetTheme,
     elevatedButtonTheme: EElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: EOutlinedButtonTheme.darkOutlinedButtonTheme,
-    inputDecorationTheme: ETextFormFieldTheme.lightInputDecorationTheme,
+    inputDecorationTheme: ETextFormFieldTheme.darkInputDecorationTheme,
   );
 }

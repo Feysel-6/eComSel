@@ -2,7 +2,7 @@ import 'package:ecom_sel/features/authentication/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../common/widgets/clear_button.dart';
+import '../../../../common/widgets/login_signup/clear_button.dart';
 import '../../../../common/widgets/success_screen/check_your_email.dart';
 import '../../../../common/widgets/success_screen/success_screen.dart';
 import '../../../../utlis/constants/image_strings.dart';

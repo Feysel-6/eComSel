@@ -1,4 +1,4 @@
-import 'package:ecom_sel/common/widgets/clear_button.dart';
+import 'package:ecom_sel/common/widgets/login_signup/clear_button.dart';
 import 'package:ecom_sel/common/widgets/success_screen/check_your_email.dart';
 import 'package:flutter/material.dart';
 import '../../../../utlis/constants/text_strings.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../features/authentication/screens/login/login.dart';
+import '../../../features/authentication/screens/login/login.dart';
 
 class ClearButton extends StatelessWidget {
   const ClearButton({

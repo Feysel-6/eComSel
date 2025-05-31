@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../../../../../common/widgets/custom_shapes/containers/circular_container.dart';
 import '../../../../../common/widgets/images/e_rounded_image.dart';
 import '../../../../../utlis/constants/colors.dart';
-import '../../../../../utlis/constants/image_strings.dart';
 import '../../../../../utlis/constants/sizes.dart';
 import '../../../controllers/home_controller.dart';
 
@@ -24,7 +23,7 @@ class EPromoSlider extends StatelessWidget {
             viewportFraction: 1,
             onPageChanged: (index, _) => controller.updatePageIndicator(index),
           ),
-          items: banners.map((url) => ERoundedImage(imageUrl: url)).toList()
+          items: banners.map((url) => ERoundedImage(imageUrl: url,)).toList()
         ),
         const SizedBox(height: ESizes.spaceBtwItems),
         Center(

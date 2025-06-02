@@ -10,6 +10,8 @@ import '../../../utlis/constants/sizes.dart';
 import '../../styles/shadows.dart';
 import '../icons/e_circular_icon.dart';
 import '../images/e_rounded_image.dart';
+import '../texts/e_brand_title_text_with_verified_icon.dart';
+import '../texts/product_price_text.dart';
 
 class EProductCard extends StatelessWidget {
   const EProductCard({super.key});
@@ -79,56 +81,41 @@ class EProductCard extends StatelessWidget {
                     title: 'Green Nike Air Shoes',
                   ),
                   SizedBox(height: ESizes.spaceBtwItems / 2),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: ESizes.xs),
-                      Icon(
-                        HugeIcons.strokeRoundedCheckmarkBadge02,
-                        color: EColors.primary,
-                        size: ESizes.iconXs,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '\$35.5',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: EColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(ESizes.cardRadiusMd),
-                            bottomRight: Radius.circular(
-                              ESizes.productImageRadius,
-                            ),
-                          ),
-                        ),
-                        child: SizedBox(
-                          height: ESizes.iconLg * 1.2,
-                          width: ESizes.iconLg * 1.2,
-                          child: Center(
-                            child: const Icon(
-                              HugeIcons.strokeRoundedAdd01,
-                              color: EColors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  EBrandTitleWithVerifiedIcon(title: 'Nike',),
                 ],
               ),
+            ),
+
+            Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: ESizes.sm),
+                  child: EProductPriceText(price: '\$35.5',),
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: EColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(ESizes.cardRadiusMd),
+                      bottomRight: Radius.circular(
+                        ESizes.productImageRadius,
+                      ),
+                    ),
+                  ),
+                  child: SizedBox(
+                    height: ESizes.iconLg * 1.2,
+                    width: ESizes.iconLg * 1.2,
+                    child: Center(
+                      child: const Icon(
+                        HugeIcons.strokeRoundedAdd01,
+                        color: EColors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

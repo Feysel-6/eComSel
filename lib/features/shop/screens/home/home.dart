@@ -25,10 +25,10 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   EHomeAppBar(),
-                  SizedBox(height: ESizes.spaceBtwSections),
+                  SizedBox(height: ESizes.spaceBtwHeader),
 
                   ESearchContainer(text: "Search in Store"),
-                  SizedBox(height: ESizes.spaceBtwSections),
+                  SizedBox(height: ESizes.spaceBtwHeader),
 
                   Padding(
                     padding: EdgeInsets.only(left: ESizes.defaultSpace),
@@ -61,6 +61,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: ESizes.spaceBtwSections),
+                  ESectionHeading(title: 'Popular Products', onPressed: (){},),
                   EGridLayout(itemCount: 2, itemBuilder: (_, index) => const EProductCard(),),
                 ],
               ),

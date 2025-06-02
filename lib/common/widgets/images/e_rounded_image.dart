@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
-import '../../../utlis/constants/colors.dart';
 import '../../../utlis/constants/sizes.dart';
 
 class ERoundedImage extends StatelessWidget {
@@ -11,7 +9,7 @@ class ERoundedImage extends StatelessWidget {
     this.height,
     this.applyImageRadius = true,
     this.border,
-    this.backgroundColor = EColors.light,
+    this.backgroundColor,
     this.fit = BoxFit.contain,
     this.padding,
     this.isNetworkImage = false,
@@ -23,7 +21,7 @@ class ERoundedImage extends StatelessWidget {
   final double? width, height;
   final bool applyImageRadius;
   final BoxBorder? border;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;
@@ -43,17 +41,19 @@ class ERoundedImage extends StatelessWidget {
           color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
         ),
-        child: ClipRRect(
-          borderRadius:
-              applyImageRadius
-                  ? BorderRadius.circular(ESizes.md)
-                  : BorderRadius.zero,
-          child: Image(
-            fit: fit,
-            image:
-                isNetworkImage
-                    ? NetworkImage(imageUrl)
-                    : AssetImage(imageUrl) as ImageProvider,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ClipRRect(
+            borderRadius:
+                applyImageRadius
+                    ? BorderRadius.circular(ESizes.md)
+                    : BorderRadius.zero,
+            child: Image(
+              image:
+                  isNetworkImage
+                      ? NetworkImage(imageUrl)
+                      : AssetImage(imageUrl) as ImageProvider,
+            ),
           ),
         ),
       ),

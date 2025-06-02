@@ -8,13 +8,14 @@ import '../../../../utlis/helpers/helper_functions.dart';
 
 class ESearchContainer extends StatelessWidget {
   const ESearchContainer({
-    super.key, required this.text, this.icon = HugeIcons.strokeRoundedSearch01, this.showBackground = true, this.showBorder = true, this.onTap,
+    super.key, required this.text, this.icon = HugeIcons.strokeRoundedSearch01, this.showBackground = true, this.showBorder = true, this.onTap, this.padding = const EdgeInsets.symmetric(horizontal: ESizes.defaultSpace),
   });
 
   final String text;
   final IconData? icon;
   final bool showBackground, showBorder;
   final VoidCallback? onTap;
+  final EdgeInsetsGeometry padding;
 
 
   @override
@@ -23,7 +24,7 @@ class ESearchContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: ESizes.defaultSpace),
+        padding: padding,
         child: Container(
           width: EDeviceUtils.getScreenWidth(context),
           padding: EdgeInsets.all(ESizes.md),

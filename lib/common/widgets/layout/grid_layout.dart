@@ -22,7 +22,7 @@ class EGridLayout extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: ESizes.gridViewSpacing,
         crossAxisSpacing: ESizes.gridViewSpacing,
-        mainAxisExtent: 288,
+        mainAxisExtent: mainAxisExtent,
       ),
       itemBuilder: itemBuilder,
     );

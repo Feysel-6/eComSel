@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hugeicons/hugeicons.dart';
 
+import 'features/shop/screens/store/store.dart';
+
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
@@ -51,5 +53,5 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [const HomeScreen(),Container(color: Colors.blue,),Container(color: Colors.deepPurple,),Container(color: Colors.orange,)];
+  final screens = [const HomeScreen(),StoreScreen(),Container(color: Colors.deepPurple,),Container(color: Colors.orange,)];
 }

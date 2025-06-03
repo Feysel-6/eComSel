@@ -7,7 +7,7 @@ import '../../../utlis/helpers/helper_functions.dart';
 class EVerticalImageText extends StatelessWidget {
   const EVerticalImageText({
     super.key, required this.title, required this.image, this.textColor = EColors
-        .white, this.backgroundColor = EColors.white, this.onTap,
+        .white, this.backgroundColor, this.onTap,
   });
 
   final String title, image;

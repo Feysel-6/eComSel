@@ -1,3 +1,4 @@
+import 'package:ecom_sel/features/personalization/screens/settings/settings.dart';
 import 'package:ecom_sel/features/shop/screens/home/home.dart';
 import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
@@ -6,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 import 'features/shop/screens/store/store.dart';
+import 'features/shop/screens/wishlist/wishlist.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -53,5 +55,5 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [const HomeScreen(),StoreScreen(),Container(color: Colors.deepPurple,),Container(color: Colors.orange,)];
+  final screens = [const HomeScreen(),StoreScreen(),WishlistScreen(),SettingsScreen()];
 }

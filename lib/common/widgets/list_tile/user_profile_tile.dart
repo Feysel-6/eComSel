@@ -1,4 +1,6 @@
+import 'package:ecom_sel/features/personalization/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 import '../../../utlis/constants/colors.dart';
@@ -21,7 +23,7 @@ class EUserProfileTile extends StatelessWidget {
       ),
       title: Text('Coded by Fe', style: Theme.of(context).textTheme.headlineSmall!.apply(color: EColors.white),),
       subtitle: Text('feyselteshome05@gmail.com', style: Theme.of(context).textTheme.bodyMedium!.apply(color: EColors.white),),
-      trailing: IconButton(onPressed: (){}, icon: const Icon(HugeIcons.strokeRoundedEdit01, color: EColors.white,)),
+      trailing: IconButton(onPressed: () => Get.to(() => ProfileScreen()), icon: const Icon(HugeIcons.strokeRoundedEdit01, color: EColors.white,)),
     );
   }
 }

@@ -2,18 +2,27 @@ import 'package:flutter/material.dart';
 
 class EProductPriceText extends StatelessWidget {
   const EProductPriceText({
-    super.key, required this.price,
+    super.key,
+    required this.price,
+    this.currencySign = '\$',
+    this.maxLines = 1,
+    this.isLarge = false,
+    this.lineThrough = false,
   });
 
-  final String price;
+  final String price, currencySign;
+  final int maxLines;
+  final bool isLarge;
+  final bool lineThrough;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      price,
-      maxLines: 1,
+      currencySign + price,
+      maxLines: maxLines,
       overflow: TextOverflow.ellipsis,
-      style: Theme.of(context).textTheme.headlineMedium,
+      style: isLarge ? Theme.of(context).textTheme.headlineMedium!.apply(decoration: lineThrough ? TextDecoration.lineThrough : null)
+          : Theme.of(context).textTheme.titleLarge!.apply(decoration: lineThrough ? TextDecoration.lineThrough : null)
     );
   }
 }

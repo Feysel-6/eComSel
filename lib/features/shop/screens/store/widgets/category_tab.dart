@@ -1,5 +1,5 @@
 import 'package:ecom_sel/common/widgets/layout/grid_layout.dart';
-import 'package:ecom_sel/common/widgets/products/product_card.dart';
+import 'package:ecom_sel/common/widgets/products/product_cards/product_card.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
 import 'package:flutter/material.dart';
 

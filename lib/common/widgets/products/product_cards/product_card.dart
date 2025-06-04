@@ -1,17 +1,19 @@
 import 'package:ecom_sel/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ecom_sel/common/widgets/texts/product_title_text.dart';
+import 'package:ecom_sel/features/shop/screens/product/product.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hugeicons/hugeicons.dart';
 
-import '../../../utlis/constants/colors.dart';
-import '../../../utlis/constants/image_strings.dart';
-import '../../../utlis/constants/sizes.dart';
-import '../../styles/shadows.dart';
-import '../icons/e_circular_icon.dart';
-import '../images/e_rounded_image.dart';
-import '../texts/e_brand_title_text_with_verified_icon.dart';
-import '../texts/product_price_text.dart';
+import '../../../../utlis/constants/colors.dart';
+import '../../../../utlis/constants/image_strings.dart';
+import '../../../../utlis/constants/sizes.dart';
+import '../../../styles/shadows.dart';
+import '../../icons/e_circular_icon.dart';
+import '../../images/e_rounded_image.dart';
+import '../../texts/e_brand_title_text_with_verified_icon.dart';
+import '../../texts/product_price_text.dart';
 
 class EProductCard extends StatelessWidget {
   const EProductCard({super.key});
@@ -21,7 +23,7 @@ class EProductCard extends StatelessWidget {
     final dark = EHelperFunctions.isDarkMode(context);
 
     return GestureDetector(
-      onTap: (){},
+      onTap: () => Get.to(() => const ProductDetainScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),

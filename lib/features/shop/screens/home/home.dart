@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/layout/grid_layout.dart';
-import '../../../../common/widgets/products/product_card.dart';
+import '../../../../common/widgets/products/product_cards/product_card.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/image_strings.dart';

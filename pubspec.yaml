@@ -1,5 +1,5 @@
 name: ecom_sel
-description: "eCommerce Application by PAPPI"
+description: "eCommerce Application by Fe"
 
 
 publish_to: 'none'
@@ -32,6 +32,7 @@ dependencies:
   # Product Specific
   readmore: ^3.0.0
   carousel_slider: ^5.0.0
+  flutter_rating_bar: ^4.0.1
 
   ### END OF PACKAGES ###
 
@@ -54,6 +55,7 @@ flutter:
     - assets/icons/categories/
     - assets/images/products/
     - assets/images/content/
+    - assets/images/reviews/
 
   ### Fonts
   fonts:

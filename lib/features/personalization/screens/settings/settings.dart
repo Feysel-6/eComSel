@@ -2,8 +2,10 @@ import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:ecom_sel/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
+import 'package:ecom_sel/features/personalization/screens/address/address.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
 import '../../../../utlis/constants/colors.dart';
@@ -41,7 +43,7 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 ESectionHeading(title: 'Account Setting', showActionButton: false,),
                 SizedBox(height: ESizes.spaceBtwItems,),
-                ESettingMenuTile(icon: HugeIcons.strokeRoundedHome06, title: 'My Addresses', subTitle: 'Set shopping delivery address', onTap: (){},),
+                ESettingMenuTile(icon: HugeIcons.strokeRoundedHome06, title: 'My Addresses', subTitle: 'Set shopping delivery address', onTap: () => Get.to(() => const UserAddressScreen()),),
                 ESettingMenuTile(icon: HugeIcons.strokeRoundedShoppingBag01, title: 'My Cart', subTitle: 'Add, remove products and move to checkout', onTap: (){},),
                 ESettingMenuTile(icon: HugeIcons.strokeRoundedShoppingBagCheck, title: 'My Order', subTitle: 'In-progress and Completed Orders', onTap: (){},),
                 ESettingMenuTile(icon: HugeIcons.strokeRoundedBank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: (){},),

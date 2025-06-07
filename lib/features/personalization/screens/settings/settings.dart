@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
+import '../../../shop/screens/order/order.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -45,7 +46,7 @@ class SettingsScreen extends StatelessWidget {
                 SizedBox(height: ESizes.spaceBtwItems,),
                 ESettingMenuTile(icon: HugeIcons.strokeRoundedHome06, title: 'My Addresses', subTitle: 'Set shopping delivery address', onTap: () => Get.to(() => const UserAddressScreen()),),
                 ESettingMenuTile(icon: HugeIcons.strokeRoundedShoppingBag01, title: 'My Cart', subTitle: 'Add, remove products and move to checkout', onTap: (){},),
-                ESettingMenuTile(icon: HugeIcons.strokeRoundedShoppingBagCheck, title: 'My Order', subTitle: 'In-progress and Completed Orders', onTap: (){},),
+                ESettingMenuTile(icon: HugeIcons.strokeRoundedShoppingBagCheck, title: 'My Order', subTitle: 'In-progress and Completed Orders', onTap: () => Get.to(() => const OrderScreen()),),
                 ESettingMenuTile(icon: HugeIcons.strokeRoundedBank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: (){},),
                 ESettingMenuTile(icon: HugeIcons.strokeRoundedDiscount, title: 'My Coupons', subTitle: 'List of all the discounted coupons', onTap: (){},),
                 ESettingMenuTile(icon: HugeIcons.strokeRoundedNotification01, title: 'Notifications', subTitle: 'Set any kind of notification message', onTap: (){},),

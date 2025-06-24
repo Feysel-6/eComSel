@@ -1,7 +1,9 @@
+import 'package:ecom_sel/features/shop/screens/all_products/all_products.dart';
 import 'package:ecom_sel/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ecom_sel/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ecom_sel/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
@@ -62,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: ESizes.spaceBtwSections),
-                  ESectionHeading(title: 'Popular Products', onPressed: (){},),
+                  ESectionHeading(title: 'Popular Products', onPressed: () => Get.to(() => const AllProducts()),),
                   EGridLayout(itemCount: 2, itemBuilder: (_, index) => const EProductCard(),),
                 ],
               ),

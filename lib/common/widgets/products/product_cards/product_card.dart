@@ -4,7 +4,7 @@ import 'package:ecom_sel/features/shop/screens/product/product.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/image_strings.dart';
@@ -36,7 +36,7 @@ class EProductCard extends StatelessWidget {
           children: [
             ERoundedContainer(
               height: 180,
-              padding: const EdgeInsets.all(ESizes.md),
+              padding: const EdgeInsets.all(ESizes.sm),
               backgroundColor: dark ? EColors.dark : EColors.light,
               child: Stack(
                 children: [
@@ -61,12 +61,12 @@ class EProductCard extends StatelessWidget {
                       ),
                     ),
                   ),
-      
+
                   Positioned(
                     top: 0,
                     right: 0,
                     child: ECircularIcon(
-                      icon: HugeIcons.strokeRoundedFavourite,
+                      icon: Iconsax.heart5,
                       color: Colors.red,
                     ),
                   ),
@@ -94,7 +94,7 @@ class EProductCard extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: ESizes.sm),
-                  child: EProductPriceText(price: '\$35.5',),
+                  child: EProductPriceText(price: '35.5',),
                 ),
                 Container(
                   decoration: const BoxDecoration(
@@ -111,7 +111,7 @@ class EProductCard extends StatelessWidget {
                     width: ESizes.iconLg * 1.2,
                     child: Center(
                       child: const Icon(
-                        HugeIcons.strokeRoundedAdd01,
+                        Iconsax.add,
                         color: EColors.white,
                       ),
                     ),

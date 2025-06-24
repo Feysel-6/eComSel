@@ -4,7 +4,7 @@ import '../../../utlis/constants/sizes.dart';
 
 class EGridLayout extends StatelessWidget {
   const EGridLayout({
-    super.key, required this.itemCount, this.mainAxisExtent = 288, required this.itemBuilder,
+    super.key, required this.itemCount, this.mainAxisExtent = 300, required this.itemBuilder,
   });
 
   final int itemCount;

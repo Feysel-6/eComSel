@@ -6,7 +6,7 @@ import 'package:ecom_sel/utlis/device/device_utility.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/image_strings.dart';
@@ -46,7 +46,7 @@ class OnBoardingScreen extends StatelessWidget {
           ),
 
           const OnBoardingSkip(),
-          const OnBoardingDotNavigation(),
+          Positioned(top: 385, left:0, right: 0,child:  const OnBoardingDotNavigation()),
           const OnBoardingNextButton(),
         ],
       ),
@@ -70,7 +70,7 @@ class OnBoardingNextButton extends StatelessWidget {
           backgroundColor: dark ? EColors.primary : EColors.black,
           side: BorderSide.none,
         ),
-        child: Icon(HugeIcons.strokeRoundedArrowRight01),
+        child: Icon(Iconsax.arrow_right_3),
       ),
     );
   }

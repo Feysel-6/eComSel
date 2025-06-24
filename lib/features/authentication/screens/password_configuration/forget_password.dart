@@ -1,8 +1,7 @@
 import 'package:ecom_sel/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
-
+import 'package:iconsax/iconsax.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../../../utlis/constants/text_strings.dart';
 
@@ -31,7 +30,7 @@ class ForgetPassword extends StatelessWidget {
 
             TextFormField(
               decoration: const InputDecoration(
-                prefixIcon: Icon(HugeIcons.strokeRoundedTelegram),
+                prefixIcon: Icon(Iconsax.direct_right),
                 labelText: ETexts.email,
               ),
             ),

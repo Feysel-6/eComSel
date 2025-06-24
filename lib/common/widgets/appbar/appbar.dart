@@ -1,7 +1,7 @@
 import 'package:ecom_sel/utlis/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../utlis/constants/sizes.dart';
 
@@ -31,7 +31,7 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
             showBackArrow
                 ? IconButton(
                   onPressed: () => Get.back(),
-                  icon: const Icon(HugeIcons.strokeRoundedArrowLeft04),
+                  icon: const Icon(Iconsax.arrow_left),
                 )
                 : leadingIcon != null ? IconButton(
                   onPressed: onLeadingPressed,

@@ -5,7 +5,7 @@ import 'package:ecom_sel/common/widgets/texts/product_title_text.dart';
 import 'package:ecom_sel/utlis/constants/image_strings.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
@@ -64,7 +64,7 @@ class EProductCardHorizontal extends StatelessWidget {
                   top: 0,
                   right: 0,
                   child: ECircularIcon(
-                    icon: HugeIcons.strokeRoundedFavourite,
+                    icon: Iconsax.heart,
                     color: Colors.red,
                   ),
                 ),
@@ -110,7 +110,7 @@ class EProductCardHorizontal extends StatelessWidget {
                           height: ESizes.iconLg * 1.2,
                           child: Center(
                             child: Icon(
-                              HugeIcons.strokeRoundedAdd01,
+                              Iconsax.add,
                               color: EColors.white,
                             ),
                           ),

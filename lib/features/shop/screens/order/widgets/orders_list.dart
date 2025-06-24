@@ -2,7 +2,7 @@ import 'package:ecom_sel/common/widgets/custom_shapes/containers/rounded_contain
 import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utlis/helpers/helper_functions.dart';
 
@@ -25,7 +25,7 @@ class EOrderListItems extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(HugeIcons.strokeRoundedPackageProcess),
+                Icon(Iconsax.ship),
                 SizedBox(width: ESizes.spaceBtwItems / 2),
                 Expanded(
                   child: Column(
@@ -46,7 +46,7 @@ class EOrderListItems extends StatelessWidget {
                     ],
                   ),
                 ),
-                IconButton(onPressed: (){}, icon: const Icon(HugeIcons.strokeRoundedArrowRight01, size: ESizes.iconSm,))
+                IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right_34, size: ESizes.iconSm,))
               ],
             ),
             SizedBox(height: ESizes.spaceBtwItems,),
@@ -55,7 +55,7 @@ class EOrderListItems extends StatelessWidget {
                 Expanded(
                   child: Row(
                     children: [
-                      Icon(HugeIcons.strokeRoundedShippingLoading),
+                      Icon(Iconsax.tag),
                       SizedBox(width: ESizes.spaceBtwItems / 2),
                       Expanded(
                         child: Column(
@@ -78,7 +78,7 @@ class EOrderListItems extends StatelessWidget {
                 Expanded(
                   child: Row(
                     children: [
-                      Icon(HugeIcons.strokeRoundedCalendar01),
+                      Icon(Iconsax.calendar),
                       SizedBox(width: ESizes.spaceBtwItems / 2),
                       Expanded(
                         child: Column(

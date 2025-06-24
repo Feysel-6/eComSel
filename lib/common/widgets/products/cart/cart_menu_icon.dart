@@ -1,7 +1,6 @@
 import 'package:ecom_sel/features/shop/screens/cart/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
 
 import '../../../../utlis/constants/colors.dart';
 
@@ -20,7 +19,7 @@ class ECartCounterIcon extends StatelessWidget {
         IconButton(
           onPressed: () => Get.to(() => const CartScreen()),
           icon: Icon(
-            HugeIcons.strokeRoundedShoppingBag02,
+            Icons.shopping_bag,
             color: iconColor,
           ),
         ),

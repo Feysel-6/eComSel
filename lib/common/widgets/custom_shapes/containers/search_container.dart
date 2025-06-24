@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
@@ -8,7 +8,7 @@ import '../../../../utlis/helpers/helper_functions.dart';
 
 class ESearchContainer extends StatelessWidget {
   const ESearchContainer({
-    super.key, required this.text, this.icon = HugeIcons.strokeRoundedSearch01, this.showBackground = true, this.showBorder = true, this.onTap, this.padding = const EdgeInsets.symmetric(horizontal: ESizes.defaultSpace),
+    super.key, required this.text, this.icon = Iconsax.search_normal, this.showBackground = true, this.showBorder = true, this.onTap, this.padding = const EdgeInsets.symmetric(horizontal: ESizes.defaultSpace),
   });
 
   final String text;

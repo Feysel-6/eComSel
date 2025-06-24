@@ -1,7 +1,7 @@
 import 'package:ecom_sel/features/authentication/screens/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/styles/spacing_style.dart';
 import '../../../../common/widgets/login_signup/form_divider.dart';
@@ -50,16 +50,16 @@ class LoginForm extends StatelessWidget {
           children: [
             TextFormField(
               decoration: InputDecoration(
-                prefixIcon: Icon(HugeIcons.strokeRoundedTelegram),
+                prefixIcon: Icon(Iconsax.direct_right),
                 labelText: ETexts.email,
               ),
             ),
             const SizedBox(height: ESizes.defaultSpace),
             TextFormField(
               decoration: InputDecoration(
-                prefixIcon: Icon(HugeIcons.strokeRoundedPasswordValidation),
+                prefixIcon: Icon(Iconsax.password_check),
                 labelText: ETexts.password,
-                suffixIcon: Icon(HugeIcons.strokeRoundedViewOffSlash),
+                suffixIcon: Icon(Iconsax.eye_slash),
               ),
             ),
             const SizedBox(height: ESizes.spaceBtwInputFields / 2),

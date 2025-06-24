@@ -23,7 +23,7 @@ dependencies:
 
   # Icons
   cupertino_icons: ^1.0.8
-  hugeicons: ^0.0.11
+  iconsax: ^0.0.8
 
   # State Management
   get: ^4.6.5

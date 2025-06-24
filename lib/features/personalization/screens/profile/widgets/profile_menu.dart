@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
+
 
 import '../../../../../utlis/constants/sizes.dart';
 
 class EProfileMenu extends StatelessWidget {
   const EProfileMenu({
-    super.key, this.icon = HugeIcons.strokeRoundedArrowRight01, required this.onPressed, required this.title, required this.value,
+    super.key, this.icon = Iconsax.arrow_right_34, required this.onPressed, required this.title, required this.value,
   });
 
   final IconData? icon;

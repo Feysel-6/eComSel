@@ -1,7 +1,7 @@
 import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ERatingBarIndicator extends StatelessWidget {
   const ERatingBarIndicator({
@@ -12,6 +12,6 @@ class ERatingBarIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RatingBarIndicator(rating: rating, itemSize: 20, itemBuilder: (_, __) => Icon(HugeIcons.strokeRoundedStar, color: EColors.primary,), unratedColor: EColors.grey, );
+    return RatingBarIndicator(rating: rating, itemSize: 20, itemBuilder: (_, __) => Icon(Iconsax.star1, color: EColors.primary,), unratedColor: EColors.grey, );
   }
 }

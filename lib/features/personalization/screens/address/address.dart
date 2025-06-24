@@ -5,7 +5,8 @@ import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
+
 
 class UserAddressScreen extends StatelessWidget {
   const UserAddressScreen({super.key});
@@ -16,7 +17,7 @@ class UserAddressScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: EColors.primary,
         onPressed: () => Get.to(() => const AddNewAddressScreen()),
-        child: const Icon(HugeIcons.strokeRoundedAdd01, color: EColors.white,),
+        child: const Icon(Iconsax.add, color: EColors.white,),
       ),
       appBar: EAppBar(
         showBackArrow: false,

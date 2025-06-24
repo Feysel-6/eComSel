@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
@@ -19,7 +19,7 @@ class EProductQuantity extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         ECircularIcon(
-          icon: HugeIcons.strokeRoundedMinusSign,
+          icon: Iconsax.minus,
           width: 32,
           height: 32,
           size: ESizes.md,
@@ -30,7 +30,7 @@ class EProductQuantity extends StatelessWidget {
         Text('2', style: Theme.of(context).textTheme.bodyMedium),
         const SizedBox(width: ESizes.spaceBtwItems),
         ECircularIcon(
-          icon: HugeIcons.strokeRoundedAdd01,
+          icon: Iconsax.add,
           width: 32,
           height: 32,
           size: ESizes.md,

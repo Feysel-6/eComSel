@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
+
 
 import '../../../../../utlis/constants/sizes.dart';
 
@@ -16,7 +17,7 @@ class ERatingAndShare extends StatelessWidget {
         Row(
           children: [
             Icon(
-              HugeIcons.strokeRoundedStar,
+              Iconsax.star5,
               color: Colors.amber,
               size: 24,
             ),
@@ -34,7 +35,7 @@ class ERatingAndShare extends StatelessWidget {
             ),
           ],
         ),
-        IconButton(onPressed: (){}, icon: const Icon(HugeIcons.strokeRoundedShare08, size: ESizes.iconMd,))
+        IconButton(onPressed: (){}, icon: const Icon(Iconsax.share, size: ESizes.iconMd,))
       ],
     );
   }

@@ -1,7 +1,7 @@
 import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 class AddNewAddressScreen extends StatelessWidget {
   const AddNewAddressScreen({super.key});
@@ -18,14 +18,14 @@ class AddNewAddressScreen extends StatelessWidget {
               children: [
                 TextFormField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(HugeIcons.strokeRoundedUser),
+                    prefixIcon: Icon(Iconsax.user),
                     labelText: 'Name',
                   ),
                 ),
                 SizedBox(height: ESizes.spaceBtwInputFields),
                 TextFormField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(HugeIcons.strokeRoundedSmartPhone01),
+                    prefixIcon: Icon(Iconsax.mobile),
                     labelText: 'Phone',
                   ),
                 ),
@@ -35,7 +35,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon: Icon(HugeIcons.strokeRoundedBuilding03),
+                          prefixIcon: Icon(Iconsax.building_31),
                           labelText: 'Street',
                         ),
                       ),
@@ -44,7 +44,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon: Icon(HugeIcons.strokeRoundedCodesandbox),
+                          prefixIcon: Icon(Iconsax.code),
                           labelText: 'Portal Code',
                         ),
                       ),
@@ -58,7 +58,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon: Icon(HugeIcons.strokeRoundedCity01),
+                          prefixIcon: Icon(Iconsax.building),
                           labelText: 'City',
                         ),
                       ),
@@ -67,7 +67,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon: Icon(HugeIcons.strokeRoundedActivity01),
+                          prefixIcon: Icon(Iconsax.activity),
                           labelText: 'State',
                         ),
                       ),
@@ -77,7 +77,7 @@ class AddNewAddressScreen extends StatelessWidget {
                 SizedBox(height: ESizes.spaceBtwInputFields),
                 TextFormField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(HugeIcons.strokeRoundedActivity01),
+                    prefixIcon: Icon(Iconsax.global),
                     labelText: 'State',
                   ),
                 ),

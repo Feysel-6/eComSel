@@ -4,7 +4,8 @@ import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
+
+import 'package:iconsax/iconsax.dart';
 
 import 'features/shop/screens/store/store.dart';
 import 'features/shop/screens/wishlist/wishlist.dart';
@@ -29,19 +30,19 @@ class NavigationMenu extends StatelessWidget {
         
           destinations: const [
             NavigationDestination(
-              icon: Icon(HugeIcons.strokeRoundedHome01),
+              icon: Icon(Iconsax.home),
               label: 'Home',
             ),
             NavigationDestination(
-              icon: Icon(HugeIcons.strokeRoundedStore02),
+              icon: Icon(Icons.store),
               label: 'Store',
             ),
             NavigationDestination(
-              icon: Icon(HugeIcons.strokeRoundedFavourite),
+              icon: Icon(Iconsax.heart),
               label: 'Wishlist',
             ),
             NavigationDestination(
-              icon: Icon(HugeIcons.strokeRoundedUser),
+              icon: Icon(Iconsax.user),
               label: 'Profile',
             ),
           ],

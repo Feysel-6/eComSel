@@ -4,7 +4,6 @@ import 'package:ecom_sel/utlis/constants/image_strings.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../../../utlis/constants/colors.dart';
@@ -31,7 +30,7 @@ class EUserReviewCard extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {},
-              icon: const Icon(HugeIcons.strokeRoundedMoreVertical),
+              icon: const Icon(Icons.more_vert),
             ),
           ],
         ),

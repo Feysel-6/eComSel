@@ -7,7 +7,7 @@ import 'package:ecom_sel/features/shop/screens/product/widgets/rating_share_widg
 import 'package:ecom_sel/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../../utlis/constants/sizes.dart';
@@ -72,7 +72,7 @@ class ProductDetainScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ESectionHeading(title: 'Reviews(199)', showActionButton: false,),
-                      IconButton(onPressed: () => Get.to(() => const ProductReviewsScreen()), icon: Icon(HugeIcons.strokeRoundedArrowRight01, size: 18,))
+                      IconButton(onPressed: () => Get.to(() => const ProductReviewsScreen()), icon: Icon(Iconsax.arrow_right_3, size: 18,))
                     ],
                   ),
                   const SizedBox(height: ESizes.spaceBtwSections,),

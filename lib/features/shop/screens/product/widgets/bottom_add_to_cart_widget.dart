@@ -3,7 +3,8 @@ import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
+
 
 class EBottomAddToCart extends StatelessWidget {
   const EBottomAddToCart({super.key});
@@ -29,7 +30,7 @@ class EBottomAddToCart extends StatelessWidget {
           Row(
             children: [
               ECircularIcon(
-                icon: HugeIcons.strokeRoundedMinusSign,
+                icon: Iconsax.minus,
                 width: 40,
                 height: 40,
                 color: EColors.white,
@@ -39,7 +40,7 @@ class EBottomAddToCart extends StatelessWidget {
               Text('2', style: Theme.of(context).textTheme.titleSmall),
               const SizedBox(width: ESizes.spaceBtwItems),
               ECircularIcon(
-                icon: HugeIcons.strokeRoundedPlusSign,
+                icon: Iconsax.add,
                 width: 40,
                 height: 40,
                 color: EColors.white,

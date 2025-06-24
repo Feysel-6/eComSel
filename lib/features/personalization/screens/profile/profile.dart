@@ -4,7 +4,7 @@ import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
 import 'package:ecom_sel/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:ecom_sel/utlis/constants/image_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../utlis/constants/sizes.dart';
 
@@ -66,7 +66,7 @@ class ProfileScreen extends StatelessWidget {
                 title: 'User Id',
                 value: '83393',
                 onPressed: () {},
-                icon: HugeIcons.strokeRoundedCopy01,
+                icon: Iconsax.copy,
               ),
               EProfileMenu(
                 title: 'E-mail',

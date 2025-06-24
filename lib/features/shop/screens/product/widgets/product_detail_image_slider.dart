@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/widgets/appbar/appbar.dart';
 import '../../../../../common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
@@ -60,7 +60,7 @@ class EProductImageSlider extends StatelessWidget {
               showBackArrow: true,
               actions: [
                 ECircularIcon(
-                  icon: HugeIcons.strokeRoundedFavourite,
+                  icon: Iconsax.heart5,
                   color: Colors.red,
                 ),
               ],

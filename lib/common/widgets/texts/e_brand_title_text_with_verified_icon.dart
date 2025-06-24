@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../utlis/constants/colors.dart';
 import '../../../utlis/constants/enums.dart';
@@ -39,7 +39,7 @@ class EBrandTitleWithVerifiedIcon extends StatelessWidget {
         ),
         const SizedBox(width: ESizes.xs),
         Icon(
-          HugeIcons.strokeRoundedCheckmarkBadge02,
+          Iconsax.verify5,
           color: EColors.primary,
           size: ESizes.iconXs,
         ),

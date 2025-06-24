@@ -1,7 +1,7 @@
 import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
 import '../../../../../utlis/helpers/helper_functions.dart';
@@ -35,7 +35,7 @@ class ESingleAddress extends StatelessWidget {
             right: 5,
             top: 0,
             child: Icon(
-              selectedAddress ? HugeIcons.strokeRoundedTick01 : null,
+              selectedAddress ? Iconsax.tick_circle5 : null,
               color:
                   selectedAddress
                       ? dark

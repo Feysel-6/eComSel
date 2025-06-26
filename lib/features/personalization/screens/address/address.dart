@@ -20,7 +20,7 @@ class UserAddressScreen extends StatelessWidget {
         child: const Icon(Iconsax.add, color: EColors.white,),
       ),
       appBar: EAppBar(
-        showBackArrow: false,
+        showBackArrow: true,
         title: Text('Addresses', style: Theme
             .of(context)
             .textTheme

@@ -1,4 +1,4 @@
-import 'package:ecom_sel/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: EAppTheme.lightTheme,
       darkTheme: EAppTheme.darkTheme,
-      home: const OnBoardingScreen(),
+      home: const Scaffold(backgroundColor: EColors.primary, body: Center(child: CircularProgressIndicator(color: Colors.white,)),),
     );
   }
 }

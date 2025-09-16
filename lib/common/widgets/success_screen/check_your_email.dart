@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../utlis/constants/image_strings.dart';
 import '../../../utlis/constants/sizes.dart';
-import '../../../utlis/constants/text_strings.dart';
 import '../../../utlis/helpers/helper_functions.dart';
 
 class CheckYourEmail extends StatelessWidget {
@@ -12,12 +11,13 @@ class CheckYourEmail extends StatelessWidget {
     this.email,
     required this.subTitle,
     required this.btnTxt,
-    required this.onPressed,
+    required this.onPressed,  this.onResend,
   });
 
   final String title, subTitle, btnTxt;
   final String? email;
   final VoidCallback onPressed;
+  final VoidCallback? onResend;
 
   @override
   Widget build(BuildContext context) {
@@ -60,10 +60,12 @@ class CheckYourEmail extends StatelessWidget {
           ),
           SizedBox(height: ESizes.spaceBtwItems),
 
-          Text(
-            ETexts.resendEmail,
-            style: Theme.of(context).textTheme.labelMedium,
-            textAlign: TextAlign.center,
+          TextButton(
+            onPressed: onResend,
+            child: const Text(
+              "Resend verification email",
+              style: TextStyle(decoration: TextDecoration.underline),
+            ),
           ),
           SizedBox(height: ESizes.spaceBtwItems),
         ],

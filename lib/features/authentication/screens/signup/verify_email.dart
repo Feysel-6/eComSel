@@ -1,19 +1,21 @@
-import 'package:ecom_sel/features/authentication/screens/login/login.dart';
+import 'package:ecom_sel/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../common/widgets/login_signup/clear_button.dart';
 import '../../../../common/widgets/success_screen/check_your_email.dart';
-import '../../../../common/widgets/success_screen/success_screen.dart';
-import '../../../../utlis/constants/image_strings.dart';
 import '../../../../utlis/constants/text_strings.dart';
 
-
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({super.key});
+  const VerifyEmailScreen({super.key, this.email, this.password});
+
+  final String? email;
+  final String? password;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -24,18 +26,13 @@ class VerifyEmailScreen extends StatelessWidget {
           title: ETexts.confirmEmail,
           subTitle: ETexts.confirmEmailSubTitle,
           btnTxt: ETexts.tContinue,
-          email: 'feyselteshome05@gmail.com',
-          onPressed:
-              () => Get.to(
-                () => SuccessScreen(
-                  image: EImages.staticSuccessIllustration,
-                  title: ETexts.yourAccountCreatedTitle,
-                  description: ETexts.yourAccountCreatedSubTitle,
-                  onPressed: () => Get.to(() => const LoginScreen()),
-                ),
-              ),
+          email: email,
+          onPressed: () =>
+              controller.checkEmailVerificationStatus(email!, password!),
+          onResend: () => controller.resendVerificationEmail(email!),
         ),
       ),
     );
   }
 }
+

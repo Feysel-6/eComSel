@@ -1,3 +1,4 @@
+import 'package:ecom_sel/bindings/general_bindings.dart';
 import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: EAppTheme.lightTheme,
       darkTheme: EAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
       home: const Scaffold(backgroundColor: EColors.primary, body: Center(child: CircularProgressIndicator(color: Colors.white,)),),
     );
   }

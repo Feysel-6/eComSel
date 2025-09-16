@@ -54,6 +54,10 @@ class EImages {
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration =
       "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+  static const String processInfo = "assets/images/animations/processing.json";
+  static String signInAnimation = "assets/images/animations/Animation - 1734020174401.json";
+  static String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
+  static String successfullyRegisterAnimation = "assets/images/animations/72462-check-register.json";
 
   // -- OnBoarding Texts
   static const String onBoardingImage1 =

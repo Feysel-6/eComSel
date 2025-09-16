@@ -23,6 +23,8 @@ dependencies:
   flutter_native_splash: ^2.4.6
   smooth_page_indicator: ^1.2.1
   google_sign_in: ^6.2.1
+  image_picker: ^1.2.0
+  cached_network_image: ^3.4.1
 
   # Icons
   cupertino_icons: ^1.0.8

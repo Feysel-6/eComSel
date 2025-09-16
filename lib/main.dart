@@ -8,15 +8,18 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'app.dart';
 
 Future<void> main() async {
+  //Widgets Binding
   final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
+  //Init Local Storage
   await GetStorage.init();
 
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
+  // Initialize Supabase
   await Supabase.initialize(
-    url: 'https://jfxmmyqpfbhlvlnwxaio.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmeG1teXFwZmJobHZsbnd4YWlvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE5MTUxNDgsImV4cCI6MjA2NzQ5MTE0OH0.pzqa2BZEWZK0-8p2rnG3YCxj9dAEn4sr5MjN8X2D5p4'
+    url: 'https://pybloyeycvcppapxifrp.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5YmxveWV5Y3ZjcHBhcHhpZnJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY3MzQ3OTgsImV4cCI6MjA3MjMxMDc5OH0.BSWEfYtIVtvY-yaXM_Oc7zhqXmEY6T6lsoVoMbfW6SM'
   ).then((_) => Get.put(AuthenticationRepository()));
   runApp(App());
 }

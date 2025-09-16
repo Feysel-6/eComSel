@@ -1,9 +1,9 @@
-import 'package:ecom_sel/features/authentication/controllers.onboarding/onboarding_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../../utlis/constants/colors.dart';
 import '../../../../../utlis/helpers/helper_functions.dart';
+import '../../../controllers/onboarding/onboarding_controller.dart';
 
 class OnBoardingDotNavigation extends StatelessWidget {
   const OnBoardingDotNavigation({

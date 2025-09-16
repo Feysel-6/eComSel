@@ -1,4 +1,3 @@
-import 'package:ecom_sel/features/authentication/controllers.onboarding/onboarding_controller.dart';
 import 'package:ecom_sel/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:ecom_sel/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:ecom_sel/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
@@ -12,6 +11,7 @@ import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/image_strings.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../../../utlis/constants/text_strings.dart';
+import '../../controllers/onboarding/onboarding_controller.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -46,7 +46,7 @@ class OnBoardingScreen extends StatelessWidget {
           ),
 
           const OnBoardingSkip(),
-          Positioned(top: 385, left:0, right: 0,child:  const OnBoardingDotNavigation()),
+          Positioned(top: 400, left:0, right: 0,child:  const OnBoardingDotNavigation()),
           const OnBoardingNextButton(),
         ],
       ),

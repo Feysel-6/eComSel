@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../common/widgets/appbar/appbar.dart';
 import '../../../../../common/widgets/products/cart/cart_menu_icon.dart';
 import '../../../../../utlis/constants/colors.dart';
 import '../../../../../utlis/constants/text_strings.dart';
+import '../../../../personalization/controllers/user_controller.dart';
 
 class EHomeAppBar extends StatelessWidget {
   const EHomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
     return EAppBar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,11 +23,13 @@ class EHomeAppBar extends StatelessWidget {
               context,
             ).textTheme.labelMedium!.apply(color: EColors.grey),
           ),
-          Text(
-            ETexts.homeAppbarSubTitle,
-            style: Theme.of(
-              context,
-            ).textTheme.headlineSmall!.apply(color: EColors.white),
+          Obx(
+            () => Text(
+              controller.user.value.fullName.capitalize!,
+              style: Theme.of(
+                context,
+              ).textTheme.headlineSmall!.apply(color: EColors.white),
+            ),
           ),
         ],
       ),

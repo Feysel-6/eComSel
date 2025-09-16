@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../../utlis/constants/colors.dart';
 import '../../../utlis/constants/sizes.dart';
@@ -35,10 +37,26 @@ class ECircularImage extends StatelessWidget {
         color: backgroundColor ?? (dark ? EColors.black : EColors.white),
         borderRadius: BorderRadius.circular(100),
       ),
-      child: Image(
-        fit: fit,
-        image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-        color: overlayColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Center(
+          child:
+              isNetworkImage
+                  ? CachedNetworkImage(
+                    imageUrl: image,
+                    fit: fit,
+                    color: overlayColor,
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                  )
+                  : Image(
+                    fit: fit,
+                    image:
+                        isNetworkImage
+                            ? NetworkImage(image)
+                            : AssetImage(image) as ImageProvider,
+                    color: overlayColor,
+                  ),
+        ),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:ecom_sel/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
+import 'package:ecom_sel/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecom_sel/features/personalization/screens/address/address.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -62,7 +63,7 @@ class SettingsScreen extends StatelessWidget {
                 const SizedBox(height: ESizes.spaceBtwSections),
                 SizedBox(
                   width: double.infinity,
-                  child: OutlinedButton(onPressed: (){}, child: const Text('Logout')),
+                  child: OutlinedButton(onPressed: AuthenticationRepository.instance.logout, child: const Text('Logout')),
                 ),
                 const SizedBox(height: ESizes.spaceBtwSections * 2.5 ,)
 

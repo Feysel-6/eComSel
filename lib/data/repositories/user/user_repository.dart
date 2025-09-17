@@ -13,8 +13,7 @@ class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
   final _db = Supabase.instance.client;
   final supabaseAdmin = SupabaseClient(
-    'https://pybloyeycvcppapxifrp.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5YmxveWV5Y3ZjcHBhcHhpZnJwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NjczNDc5OCwiZXhwIjoyMDcyMzEwNzk4fQ.OcJLu_TgxWA9qRjLdtnKtSzevGxdHVfGV8akyB_EsF8',
+    const String.fromEnvironment('SUPABASE_API_URL'), const String.fromEnvironment('SUPABASE_SERVICE_ROLE_KEY')
   );
 
   Future<void> saveUserRecord(UserModel user) async {

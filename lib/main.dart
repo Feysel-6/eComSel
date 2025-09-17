@@ -18,8 +18,8 @@ Future<void> main() async {
 
   // Initialize Supabase
   await Supabase.initialize(
-    url: 'https://pybloyeycvcppapxifrp.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5YmxveWV5Y3ZjcHBhcHhpZnJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY3MzQ3OTgsImV4cCI6MjA3MjMxMDc5OH0.BSWEfYtIVtvY-yaXM_Oc7zhqXmEY6T6lsoVoMbfW6SM'
+    url: const String.fromEnvironment('SUPABASE_API_URL'),
+    anonKey: const String.fromEnvironment('SUPABASE_ANNOYKEY'),
   ).then((_) => Get.put(AuthenticationRepository()));
   runApp(App());
 }

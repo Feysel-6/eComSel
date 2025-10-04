@@ -3,7 +3,6 @@ import 'package:ecom_sel/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../data/repositories/categories/category_repository.dart';

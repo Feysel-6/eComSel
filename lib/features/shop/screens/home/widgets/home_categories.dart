@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
+import '../../../../../common/widgets/shimmers/category_shimmer.dart';
 import '../../../../../utlis/constants/image_strings.dart';
+import '../../../controllers/category_controller.dart';
 
 class EHomeCategories extends StatelessWidget {
   const EHomeCategories({
@@ -12,17 +14,27 @@ class EHomeCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: ListView.builder(
-        itemCount: 6,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (_, index) {
-          return EVerticalImageText(image: EImages.shoeIcon,
-            title: 'Shoe',
-            onTap: () => Get.to(() => const SubCategoriesScreen()),);
-        },
-      ),
+    final categoryController = Get.put(CategoryController());
+    return Obx(() {
+      if(categoryController.isLoading.value) return const ECategoryShimmer();
+
+      if(categoryController.featuredCategories.isEmpty){
+        return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+      }
+        return SizedBox(
+          height: 80,
+          child: ListView.builder(
+            itemCount: categoryController.featuredCategories.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (_, index) {
+              final category = categoryController.featuredCategories[index];
+              return EVerticalImageText(image: category.image,
+                title: category.name,
+                onTap: () => Get.to(() => const SubCategoriesScreen()),);
+            },
+          ),
+        );
+      }
     );
   }
 }

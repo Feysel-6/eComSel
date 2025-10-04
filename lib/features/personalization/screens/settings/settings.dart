@@ -4,6 +4,7 @@ import 'package:ecom_sel/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
 import 'package:ecom_sel/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecom_sel/features/personalization/screens/address/address.dart';
+import 'package:ecom_sel/features/personalization/screens/load/load.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -56,7 +57,7 @@ class SettingsScreen extends StatelessWidget {
                 SizedBox(height: ESizes.spaceBtwSections,),
                 ESectionHeading(title: 'App Settings', showActionButton: false,),
                 SizedBox(height: ESizes.spaceBtwItems,),
-                ESettingMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Firebase'),
+                ESettingMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Supabase', onTap: () => Get.to(() => const LoadDataScreen()),),
                 ESettingMenuTile(icon: Iconsax.location, title: 'Geolocation', subTitle: 'Get recommendation based on location', trailing: Switch(value: true, onChanged: (value){}),),
                 ESettingMenuTile(icon: Iconsax.security_user, title: 'Safe Mode', subTitle: 'Search result is safe for all ages', trailing: Switch(value: false, onChanged: (value){}),),
                 ESettingMenuTile(icon: Iconsax.image, title: 'HD Image Quality', subTitle: 'Set image quality to be seen', trailing: Switch(value: false, onChanged: (value){}),),

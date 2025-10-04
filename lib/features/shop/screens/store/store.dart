@@ -13,6 +13,7 @@ import 'package:get/get.dart';
 import '../../../../common/widgets/brand/brand_card.dart';
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
+import '../../controllers/category_controller.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -20,8 +21,9 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = EHelperFunctions.isDarkMode(context);
+    final categories = CategoryController.instance.featuredCategories;
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: EAppBar(
           title: Text(
@@ -75,25 +77,13 @@ class StoreScreen extends StatelessWidget {
                 ),
 
                 bottom: ETabBar(
-                  tabs: const [
-                    Tab(child: Text('Sports')),
-                    Tab(child: Text('Furniture')),
-                    Tab(child: Text('Electronics')),
-                    Tab(child: Text('Clothes')),
-                    Tab(child: Text('Cosmetics')),
-                  ],
+                  tabs: categories.map((category) => Tab(child: Text(category.name))).toList(),
                 ),
               ),
             ];
           },
           body: TabBarView(
-            children: [
-              ECategoryTab(),
-              ECategoryTab(),
-              ECategoryTab(),
-              ECategoryTab(),
-              ECategoryTab(),
-            ],
+            children: categories.map((category) => ECategoryTab(category: category)).toList()
           ),
         ),
       ),

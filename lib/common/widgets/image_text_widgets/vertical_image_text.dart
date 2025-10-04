@@ -6,8 +6,12 @@ import '../../../utlis/helpers/helper_functions.dart';
 
 class EVerticalImageText extends StatelessWidget {
   const EVerticalImageText({
-    super.key, required this.title, required this.image, this.textColor = EColors
-        .white, this.backgroundColor, this.onTap,
+    super.key,
+    required this.title,
+    required this.image,
+    this.textColor = EColors.white,
+    this.backgroundColor,
+    this.onTap,
   });
 
   final String title, image;
@@ -30,34 +34,30 @@ class EVerticalImageText extends StatelessWidget {
               height: 56,
               padding: const EdgeInsets.all(ESizes.sm),
               decoration: BoxDecoration(
-                color: backgroundColor ?? (dark
-                    ? EColors.black
-                    : EColors.white),
+                color: backgroundColor ?? (dark ? EColors.black : EColors.white),
                 borderRadius: BorderRadius.circular(100),
               ),
               child: Center(
-                child: Image(
-                  image: AssetImage(image),
+                child: image.startsWith('http')
+                    ? Image.network(
+                  image,
                   fit: BoxFit.cover,
-                  color: dark
-                      ? EColors.light
-                      : EColors.dark,
+                  color: dark ? EColors.light : EColors.dark,
+                )
+                    : Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  color: dark ? EColors.light : EColors.dark,
                 ),
               ),
             ),
-            const SizedBox(
-              height: ESizes.spaceBtwItems / 2,
-            ),
+            const SizedBox(height: ESizes.spaceBtwItems / 2),
             SizedBox(
               width: 55,
               child: Center(
                 child: Text(
                   title,
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .labelMedium!
-                      .apply(color: textColor),
+                  style: Theme.of(context).textTheme.labelMedium!.apply(color: textColor),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

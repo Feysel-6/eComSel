@@ -48,11 +48,12 @@ class ERoundedImage extends StatelessWidget {
                 applyImageRadius
                     ? BorderRadius.circular(ESizes.md)
                     : BorderRadius.zero,
-            child: Image(
-              image:
-                  isNetworkImage
-                      ? NetworkImage(imageUrl)
-                      : AssetImage(imageUrl) as ImageProvider,
+            child:  imageUrl.startsWith('http')
+                ? Image.network(
+              imageUrl,
+            )
+                : Image.asset(
+              imageUrl,
             ),
           ),
         ),

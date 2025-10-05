@@ -11,7 +11,6 @@ import '../../../../common/widgets/layout/grid_layout.dart';
 import '../../../../common/widgets/products/product_cards/product_card.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utlis/constants/colors.dart';
-import '../../../../utlis/constants/image_strings.dart';
 import '../../../../utlis/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -47,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: ESizes.spaceBtwSections,)
+                  const SizedBox(height: ESizes.spaceBtwSections),
                 ],
               ),
             ),
@@ -56,16 +55,16 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(ESizes.defaultSpace),
               child: Column(
                 children: [
-                  EPromoSlider(
-                    banners: [
-                      EImages.banner4,
-                      EImages.banner2,
-                      EImages.banner3,
-                    ],
-                  ),
+                  EPromoSlider(),
                   SizedBox(height: ESizes.spaceBtwSections),
-                  ESectionHeading(title: 'Popular Products', onPressed: () => Get.to(() => const AllProducts()),),
-                  EGridLayout(itemCount: 2, itemBuilder: (_, index) => const EProductCard(),),
+                  ESectionHeading(
+                    title: 'Popular Products',
+                    onPressed: () => Get.to(() => const AllProducts()),
+                  ),
+                  EGridLayout(
+                    itemCount: 2,
+                    itemBuilder: (_, index) => const EProductCard(),
+                  ),
                 ],
               ),
             ),
@@ -75,5 +74,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

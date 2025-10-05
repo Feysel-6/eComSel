@@ -1,6 +1,7 @@
 import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
+import 'package:ecom_sel/data/repositories/banners/banner_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -13,7 +14,8 @@ class LoadDataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CategoryRepository());
+    final categoryController = Get.put(CategoryRepository());
+    final bannerController = Get.put(BannerRepository());
     return Scaffold(
       appBar: EAppBar(
         showBackArrow: true,
@@ -34,7 +36,8 @@ class LoadDataScreen extends StatelessWidget {
                     showActionButton: false,
                   ),
                   SizedBox(height: ESizes.spaceBtwItems),
-                  ESettingMenuTile(icon: Iconsax.menu_14, title: 'Upload Categories', subTitle: '', trailing: Icon(Iconsax.arrow_circle_up4), onTap: controller.pushDummyData,)
+                  ESettingMenuTile(icon: Iconsax.menu_14, title: 'Upload Categories', subTitle: '', trailing: Icon(Iconsax.arrow_circle_up4), onTap: categoryController.pushDummyData,),
+                  ESettingMenuTile(icon: Iconsax.menu_14, title: 'Upload Banners', subTitle: '', trailing: Icon(Iconsax.arrow_circle_up4), onTap: bannerController.pushDummyData,)
                 ],
               ),
             ),

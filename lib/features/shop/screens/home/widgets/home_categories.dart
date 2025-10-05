@@ -19,7 +19,7 @@ class EHomeCategories extends StatelessWidget {
 
       if(categoryController.featuredCategories.isEmpty){
         return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
-      }
+      }else {
         return SizedBox(
           height: 80,
           child: ListView.builder(
@@ -33,6 +33,8 @@ class EHomeCategories extends StatelessWidget {
             },
           ),
         );
+      }
+
       }
     );
   }

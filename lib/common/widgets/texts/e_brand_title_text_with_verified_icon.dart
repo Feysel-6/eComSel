@@ -27,6 +27,7 @@ class EBrandTitleWithVerifiedIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Flexible(
           child: EBrandTitleText(

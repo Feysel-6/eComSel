@@ -1,30 +1,42 @@
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
+import 'package:ecom_sel/features/shop/controllers/product/product_variation_controller.dart';
 import 'package:ecom_sel/features/shop/screens/product/widgets/bottom_add_to_cart_widget.dart';
 import 'package:ecom_sel/features/shop/screens/product/widgets/product_attribute.dart';
 import 'package:ecom_sel/features/shop/screens/product/widgets/product_detail_image_slider.dart';
 import 'package:ecom_sel/features/shop/screens/product/widgets/product_meta_data.dart';
 import 'package:ecom_sel/features/shop/screens/product/widgets/rating_share_widget.dart';
 import 'package:ecom_sel/features/shop/screens/product_reviews/product_reviews.dart';
+import 'package:ecom_sel/utlis/constants/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../../utlis/constants/sizes.dart';
-
+import '../../controllers/product/product_attribute_controller.dart';
+import '../../controllers/product/product_controller.dart';
+import '../../models/product_model.dart';
 
 class ProductDetainScreen extends StatelessWidget {
-  const ProductDetainScreen({super.key});
+  const ProductDetainScreen({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
+    final attributeController = Get.put(ProductAttributeController());
+    final variationController = Get.put(ProductVariationController(), permanent: true);
 
+    if(product.productType == ProductType.variable.toString() && product.id != null) {
+      attributeController.fetchProductAttributes(product.id!);
+      variationController.fetchProductVariations(product.id!);
+    }
     return Scaffold(
       bottomNavigationBar: EBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            EProductImageSlider(),
+            EProductImageSlider(product: product),
 
             Padding(
               padding: EdgeInsets.only(
@@ -36,10 +48,17 @@ class ProductDetainScreen extends StatelessWidget {
                 children: [
                   ERatingAndShare(),
 
-                  EProductMetaData(),
+                  Obx(() => EProductMetaData(
+                    product: product,
+                    variations: variationController.productVariations.toList(), // <--- FIXED
+                  )),
 
-                  EProductAttribute(),
-                  const SizedBox(height: ESizes.spaceBtwSections),
+                  if(product.productType == ProductType.variable.toString())
+                    Obx(() => EProductAttribute(
+                      product: product,
+                      variations: variationController.productVariations.toList(), // <--- FIXED
+                    )),
+                  if(product.productType == ProductType.variable.toString()) const SizedBox(height: ESizes.spaceBtwSections),
 
                   SizedBox(
                     width: double.infinity,
@@ -56,26 +75,39 @@ class ProductDetainScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: ESizes.spaceBtwItems),
 
-                  const ReadMoreText(
-                    'Elevate your performance with the Blue Nike Sleeve, engineered for comfort, support, and style. Made with a breathable, moisture-wicking fabric blend, this compression sleeve keeps you cool and dry during intense workouts or casual wear. The ergonomic design allows full range of motion while providing targeted muscle support, reducing fatigue and improving recovery.Featuring the iconic Nike swoosh and a sleek blue finish, this sleeve combines performance with aesthetics. It’s perfect for athletes, gym enthusiasts, or anyone needing light joint support. Machine washable and designed for all-day wear, the Blue Nike Sleeve is your reliable training companion.Available in multiple sizes for the perfect fit. Wear it solo or pair it with your favorite Nike gear.',
+                  ReadMoreText(
+                    product.description ?? 'No description is available for this product',
                     trimLines: 2,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: ' Show more ',
                     trimExpandedText: ' Less',
-                    moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    moreStyle: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800,
+                    ),
+                    lessStyle: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
-                  
+
                   const Divider(),
-                  const SizedBox(height: ESizes.spaceBtwItems,),
+                  const SizedBox(height: ESizes.spaceBtwItems),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ESectionHeading(title: 'Reviews(199)', showActionButton: false,),
-                      IconButton(onPressed: () => Get.to(() => const ProductReviewsScreen()), icon: Icon(Iconsax.arrow_right_3, size: 18,))
+                      ESectionHeading(
+                        title: 'Reviews(199)',
+                        showActionButton: false,
+                      ),
+                      IconButton(
+                        onPressed:
+                            () => Get.to(() => const ProductReviewsScreen()),
+                        icon: Icon(Iconsax.arrow_right_3, size: 18),
+                      ),
                     ],
                   ),
-                  const SizedBox(height: ESizes.spaceBtwSections,),
+                  const SizedBox(height: ESizes.spaceBtwSections),
                 ],
               ),
             ),

@@ -1,5 +1,3 @@
-import 'package:ecom_sel/common/widgets/layout/grid_layout.dart';
-import 'package:ecom_sel/common/widgets/products/product_cards/product_card.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
 import 'package:ecom_sel/features/shop/models/category_model.dart';
 import 'package:flutter/material.dart';
@@ -37,10 +35,10 @@ class ECategoryTab extends StatelessWidget {
               ),
               const SizedBox(height: ESizes.spaceBtwItems),
 
-              EGridLayout(
-                itemCount: 4,
-                itemBuilder: (_, index) => EProductCard(),
-              ),
+              // EGridLayout(
+              //   itemCount: 4,
+              //   itemBuilder: (_, index) => EProductCard(),
+              // ),
               SizedBox(height: ESizes.spaceBtwSections,)
             ],
           ),

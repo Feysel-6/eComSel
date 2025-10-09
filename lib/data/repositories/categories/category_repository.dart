@@ -114,7 +114,7 @@ class CategoryRepository extends GetxController {
             .update({'image': imageUrl})
             .eq('id', id);
       }
-      ELoaders.errorSnackBar(
+      ELoaders.successSnackBar(
         title: 'Uploaded Successfully',
         message: 'Check the Home screen now.',
       );

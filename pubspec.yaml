@@ -66,6 +66,7 @@ flutter:
     - assets/images/content/
     - assets/images/reviews/
     - assets/icons/payment_methods/
+    - assets/icons/brands/
 
   ### Fonts
   fonts:

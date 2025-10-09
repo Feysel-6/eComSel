@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 
 import '../../../../utlis/constants/sizes.dart';
-import '../../layout/grid_layout.dart';
-import '../product_cards/product_card.dart';
 
 class ESortableProducts extends StatelessWidget {
   const ESortableProducts({
@@ -37,10 +35,10 @@ class ESortableProducts extends StatelessWidget {
               .toList(),
         ),
         const SizedBox(height: ESizes.spaceBtwSections),
-        EGridLayout(
-          itemCount: 4,
-          itemBuilder: (_, index) => EProductCard(),
-        ),
+        // EGridLayout(
+        //   itemCount: 4,
+        //   itemBuilder: (_, index) => EProductCard(),
+        // ),
       ],
     );
   }

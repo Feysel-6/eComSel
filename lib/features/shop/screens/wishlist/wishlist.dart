@@ -1,7 +1,5 @@
 import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/common/widgets/icons/e_circular_icon.dart';
-import 'package:ecom_sel/common/widgets/layout/grid_layout.dart';
-import 'package:ecom_sel/common/widgets/products/product_cards/product_card.dart';
 import 'package:ecom_sel/features/shop/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,10 +31,10 @@ class WishlistScreen extends StatelessWidget {
           padding: EdgeInsets.all(ESizes.defaultSpace),
           child: Column(
             children: [
-              EGridLayout(
-                itemCount: 6,
-                itemBuilder: (_, index) => EProductCard(),
-              ),
+              // EGridLayout(
+              //   itemCount: 6,
+              //   itemBuilder: (_, index) => EProductCard(product: null,),
+              // ),
             ],
           ),
         ),

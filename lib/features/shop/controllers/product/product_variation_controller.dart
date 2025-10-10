@@ -78,7 +78,7 @@ class ProductVariationController extends GetxController {
 
   String getVariationPrice() {
     final variation = selectedVariation.value;
-    final price = variation.salePrice ?? variation.price ?? 0.0;
+    final price = variation.salePrice ?? variation.price;
     return price.toString();
   }
 

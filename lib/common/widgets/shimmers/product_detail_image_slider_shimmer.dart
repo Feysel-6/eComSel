@@ -1,10 +1,6 @@
 import 'package:ecom_sel/common/widgets/shimmers/shimmer.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-import '../../../features/shop/controllers/product/product_images_controller.dart';
-import '../../../features/shop/models/product_model.dart';
 import '../../../utlis/constants/sizes.dart';
 
 class EProductDetailImageSliderShimmer extends StatelessWidget {

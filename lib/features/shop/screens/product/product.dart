@@ -14,7 +14,6 @@ import 'package:readmore/readmore.dart';
 
 import '../../../../utlis/constants/sizes.dart';
 import '../../controllers/product/product_attribute_controller.dart';
-import '../../controllers/product/product_controller.dart';
 import '../../models/product_model.dart';
 
 class ProductDetainScreen extends StatelessWidget {

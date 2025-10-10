@@ -2,7 +2,6 @@ import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/common/widgets/brand/brand_card.dart';
 import 'package:ecom_sel/common/widgets/layout/grid_layout.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
-import 'package:ecom_sel/features/shop/models/brand_model.dart';
 import 'package:ecom_sel/features/shop/screens/brand/brand_products.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:flutter/material.dart';

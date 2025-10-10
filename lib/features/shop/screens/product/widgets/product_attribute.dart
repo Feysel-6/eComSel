@@ -11,9 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../common/widgets/chip/choice_chip.dart';
-import '../../../../../utlis/constants/enums.dart';
 import '../../../controllers/product/product_attribute_controller.dart';
-import '../../../controllers/product/product_controller.dart';
 import '../../../models/product_model.dart';
 
 class EProductAttribute extends StatelessWidget {
@@ -29,7 +27,6 @@ class EProductAttribute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = EHelperFunctions.isDarkMode(context);
-    final controller = ProductController.instance;
     final attributeController = Get.put(ProductAttributeController());
     attributeController.fetchProductAttributes(product.id!);
     final variationController = ProductVariationController.instance;

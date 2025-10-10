@@ -17,7 +17,6 @@ import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../controllers/brand_controller.dart';
 import '../../controllers/category_controller.dart';
-import '../../models/brand_model.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});

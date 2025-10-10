@@ -1,7 +1,6 @@
 import 'package:ecom_sel/data/repositories/brand/brand_repository.dart';
 import 'package:ecom_sel/data/repositories/product/product_repository.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 import '../models/brand_model.dart';
 import '../models/product_model.dart';

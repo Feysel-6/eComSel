@@ -11,7 +11,6 @@ import '../../../../features/shop/controllers/product/product_attribute_controll
 import '../../../../features/shop/controllers/product/product_controller.dart';
 import '../../../../features/shop/controllers/product/product_variation_controller.dart';
 import '../../../../features/shop/models/product_model.dart';
-import '../../../../features/shop/models/product_variation_model.dart';
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../../styles/shadows.dart';
@@ -33,7 +32,7 @@ class EProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final attributeController = Get.put(ProductAttributeController());
-    final variationController = Get.put(ProductVariationController(), permanent: true);
+    final variationController = Get.put(ProductVariationController());
 
     if(product.productType == ProductType.variable.toString() && product.id != null) {
       attributeController.fetchProductAttributes(product.id!);
@@ -134,12 +133,12 @@ class EProductCard extends StatelessWidget {
 
                       Padding(
                         padding: const EdgeInsets.only(left: ESizes.sm),
-                        child: EProductPriceText(
-                          price: controller.getProductPrice(
-                            product,
-                            variationController.productVariations.toList(),
-                          ),
-                        ),
+                        child: Obx(() {
+                          final variations = variationController.productVariations;
+                          return EProductPriceText(
+                            price: controller.getProductPrice(product, variations.toList()),
+                          );
+                        })
                       ),
                     ],
                   ),

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-import '../../../features/shop/controllers/brand_controller.dart';
 import '../../../features/shop/models/brand_model.dart';
 import '../../../utlis/constants/colors.dart';
 import '../../../utlis/constants/enums.dart';
-import '../../../utlis/constants/image_strings.dart';
 import '../../../utlis/constants/sizes.dart';
 import '../../../utlis/helpers/helper_functions.dart';
 import '../custom_shapes/containers/rounded_container.dart';

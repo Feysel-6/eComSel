@@ -1,11 +1,9 @@
 import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/common/widgets/shimmers/vertical_product_shimmer.dart';
-import 'package:ecom_sel/features/shop/screens/product/widgets/product_attribute.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:ecom_sel/utlis/helpers/cloud_helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../../common/widgets/products/sortable/sortable_products.dart';

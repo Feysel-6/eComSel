@@ -103,7 +103,7 @@ class ProductRepository extends GetxController {
     }
   }
 
-  Future<List<ProductModel>> getProductForBrand({required String brandId, int limit = -1}) async {
+  Future<List<ProductModel>> fetchProductForBrand({required String brandId, int limit = -1}) async {
     try {
       final response = limit == -1 ? await _db.from('products').select().eq('brand_id', brandId)
       : await _db.from('products').select().eq('brand_id', brandId).limit(limit);
@@ -118,6 +118,21 @@ class ProductRepository extends GetxController {
     }
   }
 
+
+  Future fetchCategoryProducts({required String categoryId, int limit = -1}) async {
+    try {
+      final response = limit == -1 ? await _db.from('products').select().eq('category_id', categoryId)
+          : await _db.from('products').select().eq('category_id', categoryId).limit(limit);
+
+      final products = response.map((raw) => ProductModel.fromMap(raw)).toList();
+      return products;
+
+    }on PostgrestException catch (e) {
+      throw Exception('Database Error: ${e.message}');
+    } catch (e) {
+      throw Exception('Something went wrong: $e');
+    }
+  }
 
   Future<void> pushDummyData() async {
     try {

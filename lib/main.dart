@@ -18,8 +18,8 @@ Future<void> main() async {
 
   // Initialize Supabase
   await Supabase.initialize(
-    url: const String.fromEnvironment('SUPABASE_API_URL'),
-    anonKey: const String.fromEnvironment('SUPABASE_ANNOYKEY'),
+    url: "https://odewakauccgjwtzwdwkx.supabase.co",
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9kZXdha2F1Y2Nnand0endkd2t4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxODA4OTEsImV4cCI6MjA3NDc1Njg5MX0.lAp1QWRpHWFcSr6narPi-21rH3jpzlbqxjAG-UUtldU'
   ).then((_) => Get.put(AuthenticationRepository()));
   runApp(App());
 }

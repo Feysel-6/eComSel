@@ -1,5 +1,6 @@
 import 'package:ecom_sel/data/repositories/brand/brand_repository.dart';
 import 'package:ecom_sel/data/repositories/product/product_repository.dart';
+import 'package:ecom_sel/utlis/loaders/loaders.dart';
 import 'package:get/get.dart';
 
 import '../models/brand_model.dart';
@@ -37,9 +38,19 @@ class BrandController extends GetxController{
   }
 
   Future<List<ProductModel>> getBrandProducts(String brandId) async {
-    final products = await ProductRepository.instance.getProductForBrand(brandId: brandId);
+    final products = await ProductRepository.instance.fetchProductForBrand(brandId: brandId);
     return products;
 
+  }
+
+  Future<List<BrandModel>> getBrandCategory(String categoryId) async {
+    try{
+      final brands = await brandRepository.fetchBrandsForCategory(categoryId);
+      return brands;
+    }catch(e){
+      ELoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      return [];
+    }
   }
 
 

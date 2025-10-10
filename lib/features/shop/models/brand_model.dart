@@ -5,15 +5,17 @@ class BrandModel {
   String name;
   String image;
   bool? isFeatured;
+  String categoryId;
 
   BrandModel({
     this.id,
     required this.name,
     required this.image,
     this.isFeatured,
+    required this.categoryId,
   });
 
-  static BrandModel empty() => BrandModel(id: '', name: '', image: '');
+  static BrandModel empty() => BrandModel(id: '', name: '', image: '', categoryId: '');
 
   toJson() {
     return {'id': id, 'name': name, 'image': image, 'is_featured': isFeatured};
@@ -28,6 +30,7 @@ class BrandModel {
           map['is_featured'] as bool
               ? map['is_featured'] as bool
               : map['is_featured'].toString().toLowerCase() == 'true',
+      categoryId: map['category_id'] as String,
     );
   }
 }

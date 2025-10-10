@@ -15,11 +15,11 @@ class ProductController extends GetxController {
 
   @override
   void onInit() {
-    fetchFeaturedProducts();
+    getFeaturedProducts();
     super.onInit();
   }
 
-  void fetchFeaturedProducts() async {
+  void getFeaturedProducts() async {
     try{
       isLoading.value = true;
       final products = await productRepository.getFeaturedProducts();
@@ -31,7 +31,7 @@ class ProductController extends GetxController {
     }
   }
 
-  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
+  Future<List<ProductModel>> getAllFeaturedProducts() async {
     try{
       final products = await productRepository.getFeaturedProducts();
       return products;
@@ -106,5 +106,20 @@ class ProductController extends GetxController {
 
   String getProductStockStatus(int stock) {
     return stock > 0 ? 'In Stock' : 'Out of Stock';
+  }
+
+  Future<List<ProductModel>> getBrandProducts({required String brandId, int limit = -1}) async {
+    try{
+      final products = await productRepository.fetchProductForBrand(brandId: brandId, limit: limit);
+      return products;
+    }catch (e) {
+      ELoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      return [];
+    }
+  }
+
+  Future<List<ProductModel>> getCategoryProducts({required String categoryId, int limit = 4}) async {
+    final products = await productRepository.fetchCategoryProducts(categoryId: categoryId, limit: limit);
+    return products;
   }
  }

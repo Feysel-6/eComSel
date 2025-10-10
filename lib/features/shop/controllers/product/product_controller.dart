@@ -31,6 +31,16 @@ class ProductController extends GetxController {
     }
   }
 
+  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
+    try{
+      final products = await productRepository.getFeaturedProducts();
+      return products;
+    }catch(e){
+      ELoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      return [];
+    }
+  }
+
   String getProductPrice(ProductModel product, List<ProductVariationModel> variations) {
     // --- Single Product Logic ---
     if (product.productType == ProductType.single.toString()) {
@@ -43,7 +53,7 @@ class ProductController extends GetxController {
     else {
       // 1. Check if the variations list is empty. If so, return a default price.
       if (variations.isEmpty) {
-        return (product.price ?? 0.0).toString(); // Fallback to base product price or '0.0'
+        return (product.price).toString(); // Fallback to base product price or '0.0'
       }
 
       double smallestPrice = double.infinity;
@@ -54,7 +64,7 @@ class ProductController extends GetxController {
         // Use null-aware operators to safely get the price, defaulting to 0.0 if both are null
         double priceToConsider = (variation.salePrice != null && variation.salePrice! > 0)
             ? variation.salePrice!
-            : (variation.price ?? 0.0);
+            : (variation.price);
 
         // Only proceed if the price is greater than 0
         if (priceToConsider > 0.0) {
@@ -73,7 +83,7 @@ class ProductController extends GetxController {
       // 2. Check the flag before returning the range
       if (!foundValidPrice) {
         // If no valid price was found in any variation, return a default value
-        return (product.price ?? 0.0).toString();
+        return (product.price).toString();
       }
 
       // 3. Return the range (now guaranteed to have valid numbers)

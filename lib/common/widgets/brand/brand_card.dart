@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../../features/shop/controllers/brand_controller.dart';
+import '../../../features/shop/models/brand_model.dart';
 import '../../../utlis/constants/colors.dart';
 import '../../../utlis/constants/enums.dart';
 import '../../../utlis/constants/image_strings.dart';
@@ -11,14 +15,17 @@ import '../texts/e_brand_title_text_with_verified_icon.dart';
 
 class EBrandCard extends StatelessWidget {
   const EBrandCard({
-    super.key, required this.showBorder, this.onTap,
+    super.key, required this.showBorder, this.onTap, required this.brand,
   });
 
+  final BrandModel brand;
   final bool showBorder;
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     final dark = EHelperFunctions.isDarkMode(context);
+
+
     return GestureDetector(
       onTap: onTap,
       child: ERoundedContainer(
@@ -29,8 +36,8 @@ class EBrandCard extends StatelessWidget {
           children: [
             Flexible(
               child: ECircularImage(
-                isNetworkImage: false,
-                image: EImages.clothIcon,
+                isNetworkImage: true,
+                image: brand.image,
                 backgroundColor: Colors.transparent,
                 overlayColor:
                 dark ? EColors.white : EColors.black,
@@ -46,7 +53,7 @@ class EBrandCard extends StatelessWidget {
                 CrossAxisAlignment.start,
                 children: [
                   EBrandTitleWithVerifiedIcon(
-                    title: 'Nike',
+                    title: brand.name,
                     brandTextSize: TextSizes.large,
                   ),
                   Text(

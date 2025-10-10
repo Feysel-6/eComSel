@@ -19,6 +19,44 @@ class ProductRepository extends GetxController {
           *,
           brand:brands(id, name, image)
         ''')
+          .eq('is_featured', true).limit(4);
+
+      final rows = response as List;
+
+      return rows.map((raw) {
+        // Normalize brand — Supabase sometimes returns a list
+        Map<String, dynamic>? brand;
+        final rawBrand = raw['brand'];
+        if (rawBrand != null) {
+          if (rawBrand is List && rawBrand.isNotEmpty) {
+            brand = Map<String, dynamic>.from(rawBrand[0] as Map);
+          } else if (rawBrand is Map) {
+            brand = Map<String, dynamic>.from(rawBrand);
+          }
+        }
+
+        // Build a cleaned map for ProductModel.fromMap()
+        final cleaned = {
+          ...Map<String, dynamic>.from(raw as Map),
+          'brand': brand,
+        };
+
+        return ProductModel.fromMap(cleaned);
+      }).toList();
+    } on PostgrestException catch (e) {
+      throw Exception('Database Error: ${e.message}');
+    } catch (e) {
+      throw Exception('Something went wrong: $e');
+    }
+  }
+  Future<List<ProductModel>> getAllFeaturedProducts() async {
+    try {
+      final response = await _db
+          .from('products')
+          .select('''
+          *,
+          brand:brands(id, name, image)
+        ''')
           .eq('is_featured', true);
 
       final rows = response as List;
@@ -49,6 +87,37 @@ class ProductRepository extends GetxController {
       throw Exception('Something went wrong: $e');
     }
   }
+
+  Future<List<ProductModel>> fetchProductsByQuery(PostgrestTransformBuilder<PostgrestList>? query,) async {
+    try {
+      final response = await query;
+
+      final List<ProductModel> productList =
+          (response as List).map((data) => ProductModel.fromMap(data)).toList();
+
+      return productList;
+    } on PostgrestException catch (e) {
+      throw Exception('Database Error: ${e.message}');
+    } catch (e) {
+      throw Exception('Something went wrong: $e');
+    }
+  }
+
+  Future<List<ProductModel>> getProductForBrand({required String brandId, int limit = -1}) async {
+    try {
+      final response = limit == -1 ? await _db.from('products').select().eq('brand_id', brandId)
+      : await _db.from('products').select().eq('brand_id', brandId).limit(limit);
+
+      final products = response.map((raw) => ProductModel.fromMap(raw)).toList();
+      return products;
+
+    }on PostgrestException catch (e) {
+      throw Exception('Database Error: ${e.message}');
+    } catch (e) {
+      throw Exception('Something went wrong: $e');
+    }
+  }
+
 
   Future<void> pushDummyData() async {
     try {

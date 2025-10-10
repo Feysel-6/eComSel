@@ -12,6 +12,21 @@ class BrandRepository extends GetxController {
 
   final _db = Supabase.instance.client;
 
+  Future<List<BrandModel>> getAllBrands() async {
+    try {
+      final snapshot = await _db.from('brands').select();
+      final list =
+      (snapshot as List)
+          .map((e) => BrandModel.fromMap(e as Map<String, dynamic>))
+          .toList();
+      return list;
+    } on PostgrestException catch (e) {
+      throw Exception('Database Error: ${e.message}');
+    } catch (e) {
+      throw Exception('Something went wrong: $e');
+    }
+  }
+
   Future<void> pushDummyData() async {
     try {
       final List<BrandModel> brands = [

@@ -1,6 +1,7 @@
 import 'package:ecom_sel/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:ecom_sel/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecom_sel/main.dart';
+import 'package:ecom_sel/utlis/local_storage/storage_utility.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
@@ -40,6 +41,7 @@ class AuthenticationRepository extends GetxController {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailConfirmedAt != null) {
+        await ELocalStorage.init(user.id);
         Get.offAll(() => const NavigationMenu());
       } else {
         Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));

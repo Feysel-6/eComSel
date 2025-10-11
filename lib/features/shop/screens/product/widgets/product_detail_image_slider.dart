@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecom_sel/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -91,10 +92,7 @@ class EProductImageSlider extends StatelessWidget {
               EAppBar(
                 showBackArrow: true,
                 actions: [
-                  ECircularIcon(
-                    icon: Iconsax.heart5,
-                    color: Colors.red,
-                  ),
+                  EFavouriteIcon(productId: product.id!,),
                 ],
               ),
             ],

@@ -1,4 +1,5 @@
 import 'package:ecom_sel/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:ecom_sel/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:ecom_sel/common/widgets/texts/product_title_text.dart';
 import 'package:ecom_sel/features/shop/screens/product/product.dart';
 import 'package:ecom_sel/utlis/constants/enums.dart';
@@ -89,10 +90,7 @@ class EProductCard extends StatelessWidget {
                   Positioned(
                     top: 0,
                     right: 0,
-                    child: ECircularIcon(
-                      icon: Iconsax.heart5,
-                      color: Colors.red,
-                    ),
+                    child: EFavouriteIcon(productId: product.id!,),
                   ),
                 ],
               ),

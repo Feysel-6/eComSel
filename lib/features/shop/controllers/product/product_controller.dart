@@ -22,7 +22,7 @@ class ProductController extends GetxController {
   void getFeaturedProducts() async {
     try{
       isLoading.value = true;
-      final products = await productRepository.getFeaturedProducts();
+      final products = await productRepository.fetchFeaturedProducts();
       featuredProducts.assignAll(products);
     }catch(e){
       ELoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
@@ -33,7 +33,7 @@ class ProductController extends GetxController {
 
   Future<List<ProductModel>> getAllFeaturedProducts() async {
     try{
-      final products = await productRepository.getFeaturedProducts();
+      final products = await productRepository.fetchFeaturedProducts();
       return products;
     }catch(e){
       ELoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());

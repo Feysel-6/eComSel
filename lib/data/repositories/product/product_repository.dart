@@ -11,7 +11,7 @@ class ProductRepository extends GetxController {
 
   final _db = Supabase.instance.client;
 
-  Future<List<ProductModel>> getFeaturedProducts() async {
+  Future<List<ProductModel>> fetchFeaturedProducts() async {
     try {
       final response = await _db
           .from('products')
@@ -49,7 +49,7 @@ class ProductRepository extends GetxController {
       throw Exception('Something went wrong: $e');
     }
   }
-  Future<List<ProductModel>> getAllFeaturedProducts() async {
+  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
     try {
       final response = await _db
           .from('products')
@@ -102,6 +102,26 @@ class ProductRepository extends GetxController {
       throw Exception('Something went wrong: $e');
     }
   }
+
+  Future<List<ProductModel>> fetchFavouriteProducts(List<String> productIds,) async {
+    try {
+      final response = await _db
+          .from('products')
+          .select()
+          .filter('id', 'in', '(${productIds.join(",")})');
+
+
+      final List<ProductModel> productList =
+      (response as List).map((data) => ProductModel.fromMap(data)).toList();
+
+      return productList;
+    } on PostgrestException catch (e) {
+      throw Exception('Database Error: ${e.message}');
+    } catch (e) {
+      throw Exception('Something went wrong: $e');
+    }
+  }
+
 
   Future<List<ProductModel>> fetchProductForBrand({required String brandId, int limit = -1}) async {
     try {

@@ -1,3 +1,4 @@
+import 'package:ecom_sel/features/shop/models/cart_item_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utlis/constants/colors.dart';
@@ -9,9 +10,9 @@ import '../../texts/e_brand_title_text_with_verified_icon.dart';
 import '../../texts/product_title_text.dart';
 
 class ECartItem extends StatelessWidget {
-  const ECartItem({
-    super.key,
-  });
+  const ECartItem({super.key, required this.cartItem});
+
+  final CartItemModel cartItem;
 
   @override
   Widget build(BuildContext context) {
@@ -19,35 +20,45 @@ class ECartItem extends StatelessWidget {
     return Row(
       children: [
         ERoundedImage(
-          imageUrl: EImages.productImage1,
+          imageUrl: cartItem.image ?? '',
           width: 60,
           height: 60,
           padding: EdgeInsets.all(ESizes.sm),
-          backgroundColor:
-          dark ? EColors.darkerGrey : EColors.light,
+          backgroundColor: dark ? EColors.darkerGrey : EColors.light,
         ),
-        const SizedBox(width: ESizes.spaceBtwItems,),
+        const SizedBox(width: ESizes.spaceBtwItems),
 
         Expanded(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              EBrandTitleWithVerifiedIcon(title: "Nike"),
-              Flexible(child: EProductTitleText(title: 'Black Sports Shoes', maxLines: 1,)),
+              EBrandTitleWithVerifiedIcon(title: cartItem.brandName! ?? ''),
+              Flexible(
+                child: EProductTitleText(title: cartItem.title, maxLines: 1),
+              ),
               Text.rich(
-                  TextSpan(
-                      children:[
-                        TextSpan(text: 'Color ', style: Theme.of(context).textTheme.bodySmall),
-                        TextSpan(text: 'Green ', style: Theme.of(context).textTheme.bodyLarge),
-                        TextSpan(text: 'Size ', style: Theme.of(context).textTheme.bodySmall),
-                        TextSpan(text: 'ETH 38 ', style: Theme.of(context).textTheme.bodyLarge),
-                      ]
-                  )
-              )
+                TextSpan(
+                  children:
+                      (cartItem.selectedVariation ?? {}).entries.map((e) {
+                        return TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '${e.key}: ',
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                            TextSpan(
+                              text: '${e.value}\n',
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
+                        );
+                      }).toList(),
+                ),
+              ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

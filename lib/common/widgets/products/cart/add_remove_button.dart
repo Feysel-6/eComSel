@@ -8,8 +8,11 @@ import '../../icons/e_circular_icon.dart';
 
 class EProductQuantity extends StatelessWidget {
   const EProductQuantity({
-    super.key,
+    super.key, required this.quantity, this.add, this.remove,
   });
+
+  final int quantity;
+  final VoidCallback? add, remove;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +28,10 @@ class EProductQuantity extends StatelessWidget {
           size: ESizes.md,
           color: dark ? EColors.white : EColors.black,
           backgroundColor: dark ? EColors.darkerGrey : EColors.light,
+          onPressed: remove ,
         ),
         const SizedBox(width: ESizes.spaceBtwItems),
-        Text('2', style: Theme.of(context).textTheme.bodyMedium),
+        Text(quantity.toString(), style: Theme.of(context).textTheme.titleSmall),
         const SizedBox(width: ESizes.spaceBtwItems),
         ECircularIcon(
           icon: Iconsax.add,
@@ -36,6 +40,7 @@ class EProductQuantity extends StatelessWidget {
           size: ESizes.md,
           color: EColors.white,
           backgroundColor: EColors.primary,
+          onPressed: add,
         ),
       ],
     );

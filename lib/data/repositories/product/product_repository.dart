@@ -19,7 +19,7 @@ class ProductRepository extends GetxController {
           *,
           brand:brands(id, name, image)
         ''')
-          .eq('is_featured', true).limit(4);
+          .eq('is_featured', true).limit(6);
 
       final rows = response as List;
 

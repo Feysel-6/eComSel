@@ -37,7 +37,7 @@ class StoreScreen extends StatelessWidget {
                 .textTheme
                 .headlineMedium,
           ),
-          actions: [ECartCounterIcon(onPressed: () {})],
+          actions: [ECartCounterIcon()],
         ),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {

@@ -31,7 +31,7 @@ class ProductDetainScreen extends StatelessWidget {
       variationController.fetchProductVariations(product.id!);
     }
     return Scaffold(
-      bottomNavigationBar: EBottomAddToCart(),
+      bottomNavigationBar: EBottomAddToCart(product: product),
       body: SingleChildScrollView(
         child: Column(
           children: [

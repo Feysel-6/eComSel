@@ -2,18 +2,19 @@ import 'package:ecom_sel/features/shop/screens/cart/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../features/shop/controllers/cart_controller.dart';
 import '../../../../utlis/constants/colors.dart';
 
 class ECartCounterIcon extends StatelessWidget {
   const ECartCounterIcon({
-    super.key, required this.onPressed, this.iconColor,
+    super.key, this.iconColor, this.counterByColor, this.counterTextColor
   });
 
-  final VoidCallback onPressed;
-  final Color? iconColor;
+  final Color? iconColor, counterByColor, counterTextColor;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CartController());
     return Stack(
       children: [
         IconButton(
@@ -33,7 +34,7 @@ class ECartCounterIcon extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100)
             ),
             child: Center(
-              child: Text('2', style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.white, fontSizeFactor: 0.8),),
+              child: Obx(() => Text(controller.noOfCartItems.value.toString(), textAlign: TextAlign.center, style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.white, fontSizeFactor: 0.8),)),
             ),
           ),
         )

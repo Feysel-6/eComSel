@@ -19,6 +19,7 @@ import '../../icons/e_circular_icon.dart';
 import '../../images/e_rounded_image.dart';
 import '../../texts/e_brand_title_text_with_verified_icon.dart';
 import '../../texts/product_price_text.dart';
+import '../cart/add_to_cart_button.dart';
 
 class EProductCard extends StatelessWidget {
   const EProductCard({
@@ -141,22 +142,7 @@ class EProductCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: EColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(ESizes.cardRadiusMd),
-                      bottomRight: Radius.circular(ESizes.productImageRadius),
-                    ),
-                  ),
-                  child: SizedBox(
-                    height: ESizes.iconLg * 1.2,
-                    width: ESizes.iconLg * 1.2,
-                    child: Center(
-                      child: const Icon(Iconsax.add, color: EColors.white),
-                    ),
-                  ),
-                ),
+                EProductCartAddToCartButton(product: product,),
               ],
             ),
           ],

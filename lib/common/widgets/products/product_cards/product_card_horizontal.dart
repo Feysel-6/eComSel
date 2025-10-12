@@ -2,22 +2,41 @@ import 'package:ecom_sel/common/widgets/images/e_rounded_image.dart';
 import 'package:ecom_sel/common/widgets/texts/e_brand_title_text_with_verified_icon.dart';
 import 'package:ecom_sel/common/widgets/texts/product_price_text.dart';
 import 'package:ecom_sel/common/widgets/texts/product_title_text.dart';
+import 'package:ecom_sel/features/shop/models/product_model.dart';
 import 'package:ecom_sel/utlis/constants/image_strings.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../features/shop/controllers/product/product_attribute_controller.dart';
+import '../../../../features/shop/controllers/product/product_controller.dart';
+import '../../../../features/shop/controllers/product/product_variation_controller.dart';
 import '../../../../utlis/constants/colors.dart';
+import '../../../../utlis/constants/enums.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../custom_shapes/containers/rounded_container.dart';
 import '../../icons/e_circular_icon.dart';
 import '../favourite_icon/favourite_icon.dart';
 
 class EProductCardHorizontal extends StatelessWidget {
-  const EProductCardHorizontal({super.key});
+  const EProductCardHorizontal({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
+    final attributeController = ProductAttributeController.instance;
+    final variationController = ProductVariationController.instance;
+
+    if(product.productType == ProductType.variable.toString() && product.id != null) {
+      attributeController.fetchProductAttributes(product.id!);
+      variationController.fetchProductVariations(product.id!);
+    }
+    final controller = ProductController.instance;
+    final salePercentage = controller.calculateSalePercentage(
+      product.price,
+      product.salePrice,
+    );
     final dark = EHelperFunctions.isDarkMode(context);
     return Container(
       width: 310,
@@ -38,8 +57,9 @@ class EProductCardHorizontal extends StatelessWidget {
                   height: 180,
                   width: 120,
                   child: ERoundedImage(
-                    imageUrl: EImages.productImage1,
+                    imageUrl: product.thumbnail!,
                     applyImageRadius: true,
+                    isNetworkImage: true,
                   ),
                 ),
 
@@ -53,7 +73,7 @@ class EProductCardHorizontal extends StatelessWidget {
                       vertical: ESizes.xs,
                     ),
                     child: Text(
-                      '25%',
+                      salePercentage!,
                       style: Theme.of(
                         context,
                       ).textTheme.labelLarge!.apply(color: EColors.black),
@@ -64,7 +84,7 @@ class EProductCardHorizontal extends StatelessWidget {
                 Positioned(
                   top: 0,
                   right: 0,
-                  child: EFavouriteIcon(productId: '',),
+                  child: EFavouriteIcon(productId: product.id!,),
                 ),
               ],
             ),
@@ -75,16 +95,17 @@ class EProductCardHorizontal extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: ESizes.sm, left: ESizes.sm),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       EProductTitleText(
-                        title: 'Green Nike Half Sleeves Shirt',
+                        title: product.title,
                         smallSize: true,
                       ),
                       const SizedBox(height: ESizes.spaceBtwItems / 2),
-                      EBrandTitleWithVerifiedIcon(title: 'Nike'),
+                      EBrandTitleWithVerifiedIcon(title: product.brand?['name']),
                     ],
                   ),
 
@@ -93,7 +114,7 @@ class EProductCardHorizontal extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(child: EProductPriceText(price: '256.0')),
+                      Flexible(child: EProductPriceText(price: controller.getProductPrice(product, variationController.productVariations.toList()))),
 
                       Container(
                         decoration: const BoxDecoration(

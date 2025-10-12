@@ -15,11 +15,22 @@ class CategoryController extends GetxController {
 
   @override
   void onInit() {
-    fetchCategories();
+    getCategories();
     super.onInit();
   }
+  
+  Future<List<CategoryModel>> getSubCategories( String categoryId) async {
+    try{
+      final subCategories = await _categoryRepository.fetchSubCategories(categoryId);
+      return subCategories;
 
-  Future<void> fetchCategories() async {
+    } catch (e) {
+      ELoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      return [];
+    }
+  }
+
+  Future<void> getCategories() async {
     try {
       isLoading.value = true;
 

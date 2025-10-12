@@ -31,6 +31,26 @@ class CategoryRepository extends GetxController {
     }
   }
 
+  Future fetchSubCategories(String categoryId) async {
+    try{
+      final response = await _db.from('categories').select().eq('parent_id', categoryId);
+      final list =
+      (response as List)
+          .map((e) => CategoryModel.fromMap(e as Map<String, dynamic>))
+          .toList();
+      return list;
+    }on PostgrestException catch (e) {
+      throw Exception('Database Error: ${e.message}');
+    } on AuthException catch (e) {
+      throw AuthException(e.message);
+    } on FormatException {
+      throw const FormatException();
+    } catch (e) {
+      throw Exception('Something went wrong. Please try again');
+    }
+
+  }
+
   Future<void> pushDummyData() async {
     try {
       final List<CategoryModel> categories = [

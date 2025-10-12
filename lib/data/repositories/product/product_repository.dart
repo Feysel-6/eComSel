@@ -141,8 +141,22 @@ class ProductRepository extends GetxController {
 
   Future fetchCategoryProducts({required String categoryId, int limit = -1}) async {
     try {
-      final response = limit == -1 ? await _db.from('products').select().eq('category_id', categoryId)
-          : await _db.from('products').select().eq('category_id', categoryId).limit(limit);
+      final response = limit == -1
+          ? await _db
+          .from('products')
+          .select('''
+          *,
+          brand:brands(id, name, image)
+        ''')
+          .eq('category_id', categoryId)
+          : await _db
+          .from('products')
+          .select('''
+          *,
+          brand:brands(id, name, image)
+        ''')
+          .eq('category_id', categoryId)
+          .limit(limit);
 
       final products = response.map((raw) => ProductModel.fromMap(raw)).toList();
       return products;

@@ -5,7 +5,7 @@ import '../../../../../common/widgets/products/cart/add_remove_button.dart';
 import '../../../../../common/widgets/products/cart/cart_item.dart';
 import '../../../../../common/widgets/texts/product_price_text.dart';
 import '../../../../../utlis/constants/sizes.dart';
-import '../../../controllers/cart_controller.dart';
+import '../../../controllers/product/cart_controller.dart';
 
 class ECartItems extends StatelessWidget {
   const ECartItems({super.key, this.showAddRemoveButton = true});

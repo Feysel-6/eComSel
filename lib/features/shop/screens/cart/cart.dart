@@ -8,7 +8,7 @@ import 'package:ecom_sel/utlis/loaders/animation_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controllers/cart_controller.dart';
+import '../../controllers/product/cart_controller.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

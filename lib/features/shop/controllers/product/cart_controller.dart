@@ -4,9 +4,9 @@ import 'package:ecom_sel/utlis/loaders/loaders.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import '../../../utlis/local_storage/storage_utility.dart';
-import '../models/cart_item_model.dart';
-import '../models/product_model.dart';
+import '../../../../utlis/local_storage/storage_utility.dart';
+import '../../models/cart_item_model.dart';
+import '../../models/product_model.dart';
 
 class CartController extends GetxController {
   static CartController get instance => Get.find();

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../controllers/cart_controller.dart';
+import '../../../controllers/product/cart_controller.dart';
 import '../../../models/product_model.dart';
 
 class EBottomAddToCart extends StatelessWidget {

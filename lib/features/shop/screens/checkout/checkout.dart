@@ -9,11 +9,15 @@ import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/constants/image_strings.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
+import 'package:ecom_sel/utlis/helpers/pricing_calculator.dart';
+import 'package:ecom_sel/utlis/loaders/loaders.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../common/widgets/products/cart/coupon_widget.dart';
 import '../../../../navigation_menu.dart';
+import '../../controllers/product/cart_controller.dart';
+import '../../controllers/product/order_controller.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
@@ -21,6 +25,10 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = EHelperFunctions.isDarkMode(context);
+    final cartController = CartController.instance;
+    final subTotal = cartController.totalCartPrice.value;
+    final orderController = Get.put(OrderController());
+    final totalAmount = EPricingCalculator.calculateTotalPrice(subTotal, 'US');
 
     return Scaffold(
       appBar: EAppBar(
@@ -29,6 +37,7 @@ class CheckoutScreen extends StatelessWidget {
           'Checkout',
           style: Theme.of(context).textTheme.headlineSmall,
         ),
+        actions: [],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -48,28 +57,42 @@ class CheckoutScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     EBillingAmountSection(),
-                    const SizedBox(height: ESizes.spaceBtwItems,),
+                    const SizedBox(height: ESizes.spaceBtwItems),
 
                     const Divider(),
-                    const SizedBox(height: ESizes.spaceBtwItems,),
+                    const SizedBox(height: ESizes.spaceBtwItems),
 
                     EBillingPaymentSection(),
-                    const SizedBox(height: ESizes.spaceBtwItems / 2,),
+                    const SizedBox(height: ESizes.spaceBtwItems / 2),
 
                     EBillingAddressSection(),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(ESizes.defaultSpace),
-        child: ElevatedButton(onPressed: () => Get.to(() => SuccessScreen(image: EImages.successfulPaymentIcon, title: 'Payment Success', description: 'Your item will be shipped soon!', onPressed: () => Get.offAll(() => const NavigationMenu()))), child: Text('Checkout \$256')),
+        child: ElevatedButton(
+          onPressed: () {
+            if (subTotal > 0) {
+              orderController.processOrder(totalAmount);
+            } else {
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                ELoaders.warningSnackBar(
+                  title: 'Empty cart',
+                  message: 'Add items in the cart in order to proceed',
+                );
+              });
+            }
+          },
+          child: Text(
+            'Checkout \$$totalAmount',
+          ),
+        ),
       ),
     );
   }
 }
-
-

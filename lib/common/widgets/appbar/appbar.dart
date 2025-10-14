@@ -30,9 +30,14 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
         leading:
             showBackArrow
                 ? IconButton(
-                  onPressed: () => Get.back(),
-                  icon: const Icon(Iconsax.arrow_left),
-                )
+              onPressed: () {
+                if (Get.isSnackbarOpen) {
+                  Get.closeCurrentSnackbar(); // safely close snackbar
+                }
+                Get.back();
+              },
+              icon: const Icon(Iconsax.arrow_left),
+            )
                 : leadingIcon != null ? IconButton(
                   onPressed: onLeadingPressed,
                   icon: Icon(leadingIcon),

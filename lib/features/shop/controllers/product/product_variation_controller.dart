@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../../data/repositories/product/product_variation_repository.dart';
 import '../../../../utlis/loaders/loaders.dart';
 import '../../models/product_model.dart';
-import '../cart_controller.dart';
+import 'cart_controller.dart';
 
 class ProductVariationController extends GetxController {
   static ProductVariationController get instance => Get.find();

@@ -12,6 +12,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
+import '../../../shop/screens/checkout/checkout.dart';
 import '../../../shop/screens/order/order.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -47,7 +48,7 @@ class SettingsScreen extends StatelessWidget {
                 ESectionHeading(title: 'Account Setting', showActionButton: false,),
                 SizedBox(height: ESizes.spaceBtwItems,),
                 ESettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery address', onTap: () => Get.to(() => const UserAddressScreen()),),
-                ESettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove products and move to checkout', onTap: (){},),
+                ESettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove products and move to checkout', onTap: () => Get.to(() => const CheckoutScreen()),),
                 ESettingMenuTile(icon: Iconsax.bag_tick, title: 'My Order', subTitle: 'In-progress and Completed Orders', onTap: () => Get.to(() => const OrderScreen()),),
                 ESettingMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: (){},),
                 ESettingMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons', onTap: (){},),

@@ -2,7 +2,7 @@ import 'package:ecom_sel/features/shop/screens/cart/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../features/shop/controllers/cart_controller.dart';
+import '../../../../features/shop/controllers/product/cart_controller.dart';
 import '../../../../utlis/constants/colors.dart';
 
 class ECartCounterIcon extends StatelessWidget {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../features/shop/controllers/cart_controller.dart';
+import '../../../../features/shop/controllers/product/cart_controller.dart';
 import '../../../../features/shop/models/product_model.dart';
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/enums.dart';

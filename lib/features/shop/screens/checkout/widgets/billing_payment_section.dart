@@ -1,7 +1,6 @@
 import 'package:ecom_sel/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
 import 'package:ecom_sel/utlis/constants/colors.dart';
-import 'package:ecom_sel/utlis/constants/image_strings.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';

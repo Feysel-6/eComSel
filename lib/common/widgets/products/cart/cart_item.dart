@@ -2,7 +2,6 @@ import 'package:ecom_sel/features/shop/models/cart_item_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utlis/constants/colors.dart';
-import '../../../../utlis/constants/image_strings.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../../../utlis/helpers/helper_functions.dart';
 import '../../images/e_rounded_image.dart';
@@ -33,7 +32,7 @@ class ECartItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              EBrandTitleWithVerifiedIcon(title: cartItem.brandName! ?? ''),
+              EBrandTitleWithVerifiedIcon(title: cartItem.brandName ?? ''),
               Flexible(
                 child: EProductTitleText(title: cartItem.title, maxLines: 1),
               ),

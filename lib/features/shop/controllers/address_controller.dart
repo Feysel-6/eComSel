@@ -5,15 +5,12 @@ import 'package:ecom_sel/features/personalization/screens/address/widgets/single
 import 'package:ecom_sel/features/shop/models/address_model.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:ecom_sel/utlis/helpers/cloud_helper_functions.dart';
-import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 
-import '../../../common/widgets/shimmers/circular_loader.dart';
 import '../../../utlis/constants/image_strings.dart';
 import '../../../utlis/helpers/network_manager.dart';
 import '../../../utlis/loaders/loaders.dart';
 import '../../../utlis/popups/full_screen_loader.dart';
-import '../models/address_model.dart';
 import 'package:flutter/material.dart';
 
 class AddressController extends GetxController {

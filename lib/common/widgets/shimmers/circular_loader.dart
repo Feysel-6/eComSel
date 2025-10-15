@@ -1,4 +1,3 @@
-import 'package:ecom_sel/common/widgets/shimmers/shimmer.dart';
 import 'package:flutter/material.dart';
 
 class ECircularLoader extends StatelessWidget {
@@ -6,7 +5,6 @@ class ECircularLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Center(
         child: CircularProgressIndicator(),

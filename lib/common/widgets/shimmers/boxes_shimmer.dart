@@ -1,4 +1,3 @@
-import 'package:ecom_sel/common/widgets/layout/grid_layout.dart';
 import 'package:ecom_sel/common/widgets/shimmers/shimmer.dart';
 import 'package:flutter/cupertino.dart';
 

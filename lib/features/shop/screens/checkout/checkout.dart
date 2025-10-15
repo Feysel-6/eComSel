@@ -1,12 +1,10 @@
 import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:ecom_sel/common/widgets/success_screen/success_screen.dart';
 import 'package:ecom_sel/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:ecom_sel/features/shop/screens/checkout/widgets/billing_address_section.dart';
 import 'package:ecom_sel/features/shop/screens/checkout/widgets/billing_amount_section.dart';
 import 'package:ecom_sel/features/shop/screens/checkout/widgets/billing_payment_section.dart';
 import 'package:ecom_sel/utlis/constants/colors.dart';
-import 'package:ecom_sel/utlis/constants/image_strings.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:ecom_sel/utlis/helpers/pricing_calculator.dart';
@@ -15,7 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../common/widgets/products/cart/coupon_widget.dart';
-import '../../../../navigation_menu.dart';
 import '../../controllers/product/cart_controller.dart';
 import '../../controllers/product/order_controller.dart';
 

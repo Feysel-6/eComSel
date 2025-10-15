@@ -2,7 +2,6 @@ import 'package:ecom_sel/features/shop/controllers/product/product_variation_con
 import 'package:ecom_sel/utlis/constants/enums.dart';
 import 'package:ecom_sel/utlis/loaders/loaders.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 import '../../../../utlis/local_storage/storage_utility.dart';
 import '../../models/cart_item_model.dart';

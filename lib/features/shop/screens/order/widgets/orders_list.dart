@@ -6,7 +6,6 @@ import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:ecom_sel/utlis/helpers/cloud_helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utlis/helpers/helper_functions.dart';
@@ -45,7 +44,7 @@ class EOrderListItems extends StatelessWidget {
           separatorBuilder:
               (_, __) => const SizedBox(height: ESizes.spaceBtwItems),
           itemBuilder: (_, index) {
-            final order = orders![index];
+            final order = orders[index];
             return ERoundedContainer(
               showBorder: true,
               padding: EdgeInsets.all(ESizes.md),

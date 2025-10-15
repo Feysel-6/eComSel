@@ -1,4 +1,3 @@
-import 'package:ecom_sel/features/shop/controllers/address_controller.dart';
 import 'package:ecom_sel/utlis/constants/colors.dart';
 import 'package:ecom_sel/utlis/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +20,8 @@ class ESingleAddress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = AddressController.instance;
     final dark = EHelperFunctions.isDarkMode(context);
     return Obx(() {
-      final selectedAddressId = controller.selectedAddress.value.id;
-      final selectedAddress = selectedAddressId == addressModel.id;
       return InkWell(
         onTap: onTap,
         child: ERoundedContainer(

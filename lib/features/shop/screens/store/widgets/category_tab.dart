@@ -6,13 +6,10 @@ import 'package:ecom_sel/features/shop/screens/store/widgets/category_brands.dar
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../common/widgets/brand/brand_showcase.dart';
 import '../../../../../common/widgets/layout/grid_layout.dart';
 import '../../../../../common/widgets/products/product_cards/product_card.dart';
-import '../../../../../utlis/constants/image_strings.dart';
 import '../../../../../utlis/constants/sizes.dart';
 import '../../../../../utlis/helpers/cloud_helper_functions.dart';
-import '../../../controllers/category_controller.dart';
 import '../../../controllers/product/product_controller.dart';
 
 class ECategoryTab extends StatelessWidget {
@@ -22,7 +19,6 @@ class ECategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = CategoryController.instance;
     final productController = ProductController.instance;
     return ListView(
       shrinkWrap: true,

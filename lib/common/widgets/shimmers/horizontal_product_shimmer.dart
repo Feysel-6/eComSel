@@ -1,7 +1,5 @@
 import 'package:ecom_sel/common/widgets/shimmers/shimmer.dart';
-import 'package:ecom_sel/features/shop/controllers/product/product_controller.dart';
 import 'package:flutter/material.dart';
-import '../../../features/shop/controllers/brand_controller.dart';
 import '../../../utlis/constants/sizes.dart';
 
 class EHorizontalProductShimmer extends StatelessWidget {

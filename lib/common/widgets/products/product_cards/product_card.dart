@@ -6,7 +6,6 @@ import 'package:ecom_sel/utlis/constants/enums.dart';
 import 'package:ecom_sel/utlis/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../features/shop/controllers/product/product_attribute_controller.dart';
 import '../../../../features/shop/controllers/product/product_controller.dart';
@@ -15,7 +14,6 @@ import '../../../../features/shop/models/product_model.dart';
 import '../../../../utlis/constants/colors.dart';
 import '../../../../utlis/constants/sizes.dart';
 import '../../../styles/shadows.dart';
-import '../../icons/e_circular_icon.dart';
 import '../../images/e_rounded_image.dart';
 import '../../texts/e_brand_title_text_with_verified_icon.dart';
 import '../../texts/product_price_text.dart';

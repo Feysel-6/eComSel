@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../../../common/widgets/shimmers/boxes_shimmer.dart';
 import '../../../../../common/widgets/shimmers/list_tile_shimmer.dart';
-import '../../../../../utlis/constants/image_strings.dart';
 import '../../../../../utlis/constants/sizes.dart';
 import '../../../../../utlis/helpers/cloud_helper_functions.dart';
 import '../../../controllers/brand_controller.dart';

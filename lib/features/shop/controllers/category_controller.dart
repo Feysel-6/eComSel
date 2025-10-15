@@ -3,7 +3,6 @@ import 'package:ecom_sel/features/shop/models/category_model.dart';
 import 'package:ecom_sel/utlis/loaders/loaders.dart';
 import 'package:get/get.dart';
 
-import '../models/product_model.dart';
 
 class CategoryController extends GetxController {
   static CategoryController get instance => Get.find();

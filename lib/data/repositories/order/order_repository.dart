@@ -31,7 +31,6 @@ class OrderRepository extends GetxController {
 
   Future<void> saveOrder(OrderModel order, String userId) async {
     try {
-
       final orderData = {
         'user_id': userId,
         'payment_method': order.paymentMethod,
@@ -41,9 +40,7 @@ class OrderRepository extends GetxController {
         'address_id': order.addressId,
       };
 
-      final response = await _db
-          .from('orders')
-          .insert(orderData);
+      await _db.from('orders').insert(orderData);
     } catch (e) {
       throw 'Something went Wrong while Inserting Order Information. Try again later.';
     }

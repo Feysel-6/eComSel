@@ -1,6 +1,5 @@
 import 'package:ecom_sel/common/widgets/texts/section_heading.dart';
 import 'package:ecom_sel/utlis/constants/image_strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

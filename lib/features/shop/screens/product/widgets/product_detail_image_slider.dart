@@ -2,11 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecom_sel/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/widgets/appbar/appbar.dart';
 import '../../../../../common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
-import '../../../../../common/widgets/icons/e_circular_icon.dart';
 import '../../../../../common/widgets/images/e_rounded_image.dart';
 import '../../../../../common/widgets/shimmers/product_detail_image_slider_shimmer.dart';
 import '../../../../../utlis/constants/colors.dart';

@@ -24,7 +24,6 @@ class ProductRepository extends GetxController {
       final rows = response as List;
 
       return rows.map((raw) {
-        // Normalize brand — Supabase sometimes returns a list
         Map<String, dynamic>? brand;
         final rawBrand = raw['brand'];
         if (rawBrand != null) {

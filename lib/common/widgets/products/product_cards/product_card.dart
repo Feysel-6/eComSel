@@ -56,6 +56,7 @@ class EProductCard extends StatelessWidget {
           color: dark ? EColors.darkerGrey : EColors.white,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ERoundedContainer(
               height: 180,
@@ -115,12 +116,13 @@ class EProductCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (product.productType ==
                               ProductType.single.toString() &&
                           product.salePrice! < product.price)
                         Padding(
-                          padding: EdgeInsets.only(left: ESizes.sm),
+                          padding: EdgeInsets.only(left: ESizes.md),
                           child: Text(
                             product.price.toString(),
                             style: Theme.of(context).textTheme.labelMedium!

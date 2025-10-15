@@ -8,7 +8,7 @@ class ProductAttributeRepository extends GetxController {
 
   final _db = Supabase.instance.client;
 
-  Future<List<ProductAttributeModel>> getProductAttributes(
+  Future<List<ProductAttributeModel>> fetchProductAttributes(
     String productId,
   ) async {
     try {

@@ -1,3 +1,4 @@
+import 'package:ecom_sel/common/widgets/appbar/appbar.dart';
 import 'package:ecom_sel/common/widgets/shimmers/shimmer.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,7 @@ class EProductDetailImageSliderShimmer extends StatelessWidget {
             ),
           ),
         ),
+        EAppBar(showBackArrow: true,)
       ],
     );
   }

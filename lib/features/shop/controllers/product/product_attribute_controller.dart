@@ -13,7 +13,7 @@ class ProductAttributeController extends GetxController {
 
   Future<void> fetchProductAttributes(String productId) async {
     try {
-      final result = await attributeRepo.getProductAttributes(productId);
+      final result = await attributeRepo.fetchProductAttributes(productId);
       attributes.assignAll(result);
     } catch (e) {
       ELoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());

@@ -38,6 +38,8 @@ class AllProductController extends GetxController {
       case 'Lower Price':
         products.sort((a, b) => a.price.compareTo(b.price));
         break;
+      case 'Newest' :
+        products.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
       case 'Sale':
         products.sort((a, b) {
           if (b.salePrice! > 0){

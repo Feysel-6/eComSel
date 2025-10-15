@@ -113,7 +113,7 @@ class EProductCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Flexible(
+                Expanded(
                   child: Column(
                     children: [
                       if (product.productType ==

@@ -23,32 +23,38 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: ESizes.md),
-      child: AppBar(
-        automaticallyImplyLeading: false,
-        leading:
-            showBackArrow
-                ? IconButton(
-              onPressed: () {
-                if (Get.isSnackbarOpen) {
-                  Get.closeCurrentSnackbar(); // safely close snackbar
-                }
-                Get.back();
-              },
-              icon: const Icon(Iconsax.arrow_left),
-            )
-                : leadingIcon != null ? IconButton(
-                  onPressed: onLeadingPressed,
-                  icon: Icon(leadingIcon),
-                ):null,
-        title: title,
-        actions: actions,
-      ),
+    return AppBar(
+      automaticallyImplyLeading: false,
+      leading:
+          showBackArrow
+              ? IconButton(
+                onPressed: () {
+                  if (Get.isSnackbarOpen) {
+                    Get.closeCurrentSnackbar();
+                  }
+                  Get.back();
+                },
+                icon: const Icon(Iconsax.arrow_left),
+              )
+              : leadingIcon != null
+              ? IconButton(onPressed: onLeadingPressed, icon: Icon(leadingIcon))
+              : null,
+      title:
+          title != null
+              ? Padding(padding: EdgeInsets.only(left: ESizes.md), child: title)
+              : null,
+      actions:
+          actions
+              ?.map(
+                (action) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: ESizes.md),
+                  child: action,
+                ),
+              )
+              .toList(),
     );
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(EDeviceUtils.getAppBarHeight());
 }

@@ -2,6 +2,7 @@ import 'package:ecom_sel/features/authentication/screens/signup/widgets/signup_f
 import 'package:ecom_sel/utlis/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../utlis/constants/sizes.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: EAppBar(showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(ESizes.defaultSpace),

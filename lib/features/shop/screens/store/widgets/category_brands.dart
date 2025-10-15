@@ -1,4 +1,5 @@
 import 'package:ecom_sel/common/widgets/brand/brand_showcase.dart';
+import 'package:ecom_sel/common/widgets/shimmers/brand_showcase_shimmer.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../../../common/widgets/shimmers/boxes_shimmer.dart';
@@ -21,14 +22,8 @@ class CategoryBrands extends StatelessWidget {
     return FutureBuilder(
       future: controller.getBrandCategory(category.id!),
       builder: (context, asyncSnapshot) {
-        const loader = Column(
-          children: [
-            EListTileShimmer(),
-            SizedBox(height: ESizes.spaceBtwItems),
-            EBoxesShimmer(),
-            SizedBox(height: ESizes.spaceBtwItems),
-          ],
-        );
+
+        const loader = EBrandShowcaseShimmer();
 
         final widget = ECloudHelperFunctions.checkMultipleRecordState(
           asyncSnapshot: asyncSnapshot,

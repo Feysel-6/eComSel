@@ -11,7 +11,6 @@ class ProductVariationRepository extends GetxController {
 
   final _db = Supabase.instance.client;
 
-  // ... in ProductVariationRepository
 
   Future<List<ProductVariationModel>> getProductVariations(String productId) async {
     try {

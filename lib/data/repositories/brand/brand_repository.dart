@@ -12,7 +12,7 @@ class BrandRepository extends GetxController {
 
   final _db = Supabase.instance.client;
 
-  Future<List<BrandModel>> getAllBrands() async {
+  Future<List<BrandModel>> fetchAllBrands() async {
     try {
       final snapshot = await _db.from('brands').select();
       final list =

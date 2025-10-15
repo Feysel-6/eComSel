@@ -15,8 +15,6 @@ class EBoxesShimmer extends StatelessWidget {
             Expanded(child: EShimmerEffect(width: 150, height: 110)),
             SizedBox(width: ESizes.spaceBtwItems),
             Expanded(child: EShimmerEffect(width: 150, height: 110)),
-            SizedBox(width: ESizes.spaceBtwItems),
-            Expanded(child: EShimmerEffect(width: 150, height: 110)),
           ],
         ),
       ],

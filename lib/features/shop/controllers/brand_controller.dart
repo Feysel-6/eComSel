@@ -23,7 +23,7 @@ class BrandController extends GetxController{
   Future<void> getFeaturedBrands() async {
     try{
       isLoading.value = true;
-      final brands = await brandRepository.getAllBrands();
+      final brands = await brandRepository.fetchAllBrands();
       allBrands.assignAll(brands);
       featuredBrands.assignAll(
         allBrands.where(

@@ -29,11 +29,11 @@ class ESingleAddress extends StatelessWidget {
           padding: EdgeInsets.all(ESizes.md),
           showBorder: true,
           backgroundColor:
-              addressModel.selected
+              addressModel.selected.value
                   ? EColors.primary.withValues(alpha: 0.5)
                   : Colors.transparent,
           borderColor:
-              addressModel.selected
+              addressModel.selected.value
                   ? Colors.transparent
                   : dark
                   ? EColors.darkerGrey
@@ -45,9 +45,9 @@ class ESingleAddress extends StatelessWidget {
                 right: 5,
                 top: 0,
                 child: Icon(
-                  addressModel.selected ? Iconsax.tick_circle5 : null,
+                  addressModel.selected.value ? Iconsax.tick_circle5 : null,
                   color:
-                      addressModel.selected
+                      addressModel.selected.value
                           ? dark
                               ? EColors.light
                               : EColors.dark

@@ -33,7 +33,7 @@ class AddressController extends GetxController {
     try {
       final addresses = await addressRepository.fetchUserAddresses();
       selectedAddress.value = addresses.firstWhere(
-        (e) => e.selected,
+        (e) => e.selected.value,
         orElse: () => AddressModel.empty(),
       );
       return addresses;
@@ -59,7 +59,7 @@ class AddressController extends GetxController {
           false,
         );
       }
-      address.selected = true;
+      address.selected.value = true;
       selectedAddress.value = address;
       await addressRepository.updateSelectedField(address.id!, true);
       // Get.back();
@@ -98,7 +98,7 @@ class AddressController extends GetxController {
         state: state.text.trim(),
         country: country.text.trim(),
         phoneNumber: phoneNumber.text.trim(),
-        selected: true,
+        selected: true.obs,
       );
 
       final inserted = await addressRepository.addAddress(address);

@@ -1,4 +1,5 @@
 import 'package:ecom_sel/utlis/formatters/formatters.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 class AddressModel {
   String? id;
@@ -11,7 +12,8 @@ class AddressModel {
   final String country;
   final String? userId;
   final DateTime? dateTime;
-  bool selected;
+  Rx<bool> selected;
+
 
   AddressModel({
     this.id,
@@ -24,8 +26,9 @@ class AddressModel {
     required this.country,
     this.userId,
     this.dateTime,
-    this.selected = false, // match DB default
-  });
+    Rx<bool>? selected,
+  }): selected = selected ?? false.obs;
+
   String get formattedPhoneNo => EFormatter.formatPhoneNumber(phoneNumber);
 
   static AddressModel empty() => AddressModel(
@@ -38,7 +41,7 @@ class AddressModel {
     postalCode: '',
     country: '',
     userId: '',
-    selected: false,
+    selected: false.obs,
   );
 
   Map<String, dynamic> toJson() {
@@ -69,7 +72,7 @@ class AddressModel {
       postalCode: map['postal_code'] as String? ?? '',
       country: map['country'] as String,
       dateTime: map['created_at'] != null ? DateTime.parse(map['created_at']) : null,
-      selected: map['is_default'] as bool? ?? false,
+        selected: (map['is_default'] as bool?)?.obs ?? false.obs,
     );
   }
 

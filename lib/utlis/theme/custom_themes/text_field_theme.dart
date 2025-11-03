@@ -10,7 +10,7 @@ class ETextFormFieldTheme{
     labelStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.black),
     hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.black),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
-    floatingLabelStyle: const TextStyle().copyWith(color: Colors.black.withValues(alpha: 0.8)),
+    floatingLabelStyle: const TextStyle().copyWith(color: Colors.black.withValues(alpha: 51)),
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: const BorderSide(color: Colors.grey, width: 1),
@@ -39,7 +39,7 @@ class ETextFormFieldTheme{
     labelStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),
     hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
-    floatingLabelStyle: const TextStyle().copyWith(color: Colors.black.withValues(alpha: 0.8)),
+    floatingLabelStyle: const TextStyle().copyWith(color: Colors.white.withValues(alpha: 51)),
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: const BorderSide(color: Colors.grey, width: 1),

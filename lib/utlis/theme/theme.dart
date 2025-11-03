@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
 import 'custom_themes/appbar_theme.dart';
 import 'custom_themes/bottom_sheet_theme.dart';
 import 'custom_themes/checkbox_theme.dart';
@@ -30,16 +31,16 @@ class EAppTheme{
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
     primaryColor: Colors.blue,
     textTheme: ETextTheme.darkTextTheme,
     chipTheme: EChipTheme.darkChipTheme,
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: EColors.black,
     appBarTheme: EAppBarTheme.darkAppBarTheme,
     checkboxTheme: ECheckboxTheme.darkCheckboxTheme,
     bottomSheetTheme: EBottomSheetTheme.darkBottomSheetTheme,
     elevatedButtonTheme: EElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: EOutlinedButtonTheme.darkOutlinedButtonTheme,
-    inputDecorationTheme: ETextFormFieldTheme.lightInputDecorationTheme,
+    inputDecorationTheme: ETextFormFieldTheme.darkInputDecorationTheme,
   );
 }

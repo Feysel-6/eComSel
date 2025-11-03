@@ -18,14 +18,12 @@ class EDeviceUtils {
     );
   }
 
-  static bool isLanddscapeOrientation(BuildContext context) {
-    final viewInsets = View.of(context).viewInsets;
-    return viewInsets.bottom == 0;
+  bool isLandscapeOrientation(BuildContext context) {
+    return MediaQuery.of(context).orientation == Orientation.landscape;
   }
 
-  static bool isPortraitOrientation(BuildContext context) {
-    final viewInsets = View.of(context).viewInsets;
-    return viewInsets.bottom > 0;
+  bool isPortraitOrientation(BuildContext context) {
+    return MediaQuery.of(context).orientation == Orientation.portrait;
   }
 
   static void setFullScreen(bool enable) {
